@@ -14,11 +14,11 @@ Once pods are setup you can past the followign code into your Podfile
 
 ```bash
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/kindred-app/sd-pod-test.git'
+source 'https://github.com/kindred-app/Specs.git'
 use_frameworks!
 inhibit_all_warnings!
 
-platform :ios, '13.0'
+platform :ios, '11.0'
 
 target '**Sample**' do
     pod 'KindredSDK'
@@ -30,3 +30,4 @@ end
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+Kindred Ltd - All rights reserved.
