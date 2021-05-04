@@ -4,7 +4,7 @@
 **If your poroject does't have pods then we need to setup pods first by using below steps:-**
 
 1. Open Terminal and execute: $ sudo gem install cocoapods
-2. Navigate to your Project folder (I assume in your case it's cd /Users/myName/Developer/SimpleWeather/SimpleWeather.xcodeproj).
+2. Navigate to your Project folder (I assume in your case it's ```bashcd /Users/myName/Developer/SimpleWeather/SimpleWeather.xcodeproj).```
 3. Setup Cocoapod pod setup
 4. Create the Podfile touch Podfile
 5. Open the Podfile open -e Podfile and insert your code for Podfile
