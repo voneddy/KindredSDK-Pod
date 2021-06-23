@@ -1,6 +1,9 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
-// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KindredSDK
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KindredSDK
+import CommonCrypto
+import CoreTelephony
+import CryptoKit
 import FleksyApps
 import FleksyKeyboardSDK
 import Foundation
@@ -11,49 +14,63 @@ import UIKit
   public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController)
   public func initialise(_ hasFullAccess: Swift.Bool)
   public func updatePredictions(_ arrayPredictions: Swift.Array<Swift.String>, _ arrayTypes: Swift.Array<Swift.UInt32>)
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class NoFullAccessView : UIKit.UIView {
   @objc dynamic public init()
   public func initialise()
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class PredictionButton : UIKit.UIButton {
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
 }
 @objc public class KeyboardDisplayConfiguration : ObjectiveC.NSObject {
-  public init(cashbackLabel: Swift.String?)
+  public init(cashbackLabel: Swift.String? = KeyboardDisplayConfiguration.CashbackLabelType(type: KeyboardDisplayConfiguration.CashbackLabel.CASHBACK), showWithdrawal: Swift.Bool? = false)
   public enum CashbackLabel {
     case CASHBACK
     case DONATIONS
     public static func == (a: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel, b: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public static func CashbackLabelType(type: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel) -> Swift.String?
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class DealsView : UIKit.UIScrollView {
   final public let fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController!
-  public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController)
+  public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, currentAppPackageName: Swift.String, showWithdrawal: Swift.Bool = false, withdrawalText: Swift.String? = nil)
   public func setupConstraints()
   public func updateDeals(text: Swift.String)
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
 }
 @objc public class CustomerKeyboardConfiguration : ObjectiveC.NSObject {
-  public init(display: KindredSDK.KeyboardDisplayConfiguration)
-  @objc deinit
+  public init(display: KindredSDK.KeyboardDisplayConfiguration? = KeyboardDisplayConfiguration(), auth: KindredSDK.AuthConfiguration? = AuthConfiguration())
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class KMenuButton : UIKit.UIButton {
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+public class AuthConfiguration {
+  public init(authMode: Swift.Bool? = AuthConfiguration.AuthModeLabelType(type: AuthConfiguration.AuthMode.EXTERNAL))
+  public enum AuthMode {
+    case INTERNAL
+    case EXTERNAL
+    public static func == (a: KindredSDK.AuthConfiguration.AuthMode, b: KindredSDK.AuthConfiguration.AuthMode) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func AuthModeLabelType(type: KindredSDK.AuthConfiguration.AuthMode) -> Swift.Bool?
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class KeyboardSDKViewController : UIKit.UIViewController {
@@ -71,9 +88,9 @@ import UIKit
   public func getPredictionsView() -> KindredSDK.PredictionsView
   public func initFleksyInterfaceForDealsView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController) -> KindredSDK.DealsView
   public func initFleksyInterfaceForPredictionView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController) -> KindredSDK.PredictionsView
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers open class KindredViewController : UIKit.UIInputViewController, FleksyKeyboardSDK.FKInterfaceInputViewControllerDelegate, UIKit.UIGestureRecognizerDelegate {
   @objc open func addKeyboardViewController(_ currentKeyboardVC: UIKit.UIViewController)
@@ -81,6 +98,7 @@ import UIKit
   @objc open func addExtensionsViewController(_ extensionsVC: UIKit.UIViewController)
   @objc open func triggerOpenApp()
   @objc open func eventBus(_ event: Swift.String, payload dictPayload: [Swift.AnyHashable : Any])
+  open func setUserId(userId: Swift.String)
   @objc open func dataCollection(_ data: Swift.String)
   @objc open func dismissKeyboardButton()
   @objc open func changeKeyboardButton()
@@ -99,9 +117,9 @@ import UIKit
   @objc open func contextPropertiesChanged(_ properties: FleksyKeyboardSDK.KeyboardProperties)
   open func initKeyboard()
   open func configureKeyboard() -> KindredSDK.CustomerKeyboardConfiguration
-  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 public class Debouncer {
   public init(delay: Foundation.TimeInterval)
@@ -114,3 +132,5 @@ public class Debouncer {
 }
 extension KindredSDK.KeyboardDisplayConfiguration.CashbackLabel : Swift.Equatable {}
 extension KindredSDK.KeyboardDisplayConfiguration.CashbackLabel : Swift.Hashable {}
+extension KindredSDK.AuthConfiguration.AuthMode : Swift.Equatable {}
+extension KindredSDK.AuthConfiguration.AuthMode : Swift.Hashable {}

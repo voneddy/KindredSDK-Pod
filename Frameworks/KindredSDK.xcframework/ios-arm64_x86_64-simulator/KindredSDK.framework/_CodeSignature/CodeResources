@@ -10,7 +10,7 @@
 		</data>
 		<key>Frameworks/FleksyApps.framework/FleksyApps</key>
 		<data>
-		iv1xOYrjBhio18rm8ybQq+tVACM=
+		4G99l+bEJVWj+BmIdGns8zTc1vw=
 		</data>
 		<key>Frameworks/FleksyApps.framework/Info.plist</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Frameworks/FleksyApps.framework/_CodeSignature/CodeResources</key>
 		<data>
-		ylUQ8B6EZzxowSglFdt+Nb3Njy8=
+		AG0X600D7HdwqHsErN8SXe0TZK4=
 		</data>
 		<key>Frameworks/FleksyEngine.framework/FleksyEngine</key>
 		<data>
-		zFk+uBaq6cIaDGcU1nUX2VpN3T4=
+		CIjQR3I9fVKsWH4wyn/E5SVYiss=
 		</data>
 		<key>Frameworks/FleksyEngine.framework/Info.plist</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Frameworks/FleksyEngine.framework/_CodeSignature/CodeResources</key>
 		<data>
-		SQVObvkUZJhMnErS+1oT2JvYNr4=
+		tAISmJo0QtbD5ijGVvfRkUJBxBM=
 		</data>
 		<key>Frameworks/FleksyEngine.framework/languages.test</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/FleksyKeyboardSDK.framework/FleksyKeyboardSDK</key>
 		<data>
-		UfpbFbZB1fJ70p1FrsQsc10oIQI=
+		k2V5hqOfCUAgD8DCoxCAmu5n02k=
 		</data>
 		<key>Frameworks/FleksyKeyboardSDK.framework/Info.plist</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Frameworks/FleksyKeyboardSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		2QsTHbB2/xhrtUlXwf4JfUaw9ws=
+		8LXDR87lYd+Pke+L7uxXsDnX+Do=
 		</data>
 		<key>Frameworks/FleksyKeyboardSDK.framework/embeddings_200_2_ios_pos_genpos_clust10000_f16.db</key>
 		<data>
@@ -102,15 +102,15 @@
 		</data>
 		<key>Frameworks/ServiceFramework.framework/ServiceFramework</key>
 		<data>
-		orNM+ITz/OFh6F1K1r9MuUj9bsg=
+		xpW2LI79Cm7rICNUUFYFUrLulkM=
 		</data>
 		<key>Frameworks/ServiceFramework.framework/_CodeSignature/CodeResources</key>
 		<data>
-		US1U/wAAZhN4+DZIo03SZSIuB0Q=
+		XHteCP/j+FLF1lGOD1Yi/DoCjXY=
 		</data>
 		<key>Headers/KindredSDK-Swift.h</key>
 		<data>
-		LKPyhqHdDPx+avTjQ1GR0s5pdlY=
+		31Yi7Lxi+GLXe1FMLwuo54GAVeI=
 		</data>
 		<key>Headers/KindredSDK.h</key>
 		<data>
@@ -118,55 +118,55 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		4Lim+0Gx6SKGh+BZON0vqjePoFE=
+		CppQlHtnj3Gse4fIJq1sHkf8cRI=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		3LVGXsNoPLYsx30a1hGwIsDPGm4=
+		aSKnYkH7ouiWztuRjHqtazuXgqM=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		MwJQSFvAc1vrYGzLIaWQ8L0Hzh0=
+		AABtbqftS3/qb+f41zEGOBXMBbE=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		5m0FDd3Kz+3LHAXs6wALGn1D0DY=
+		5tdKVwAEACFzp+YUloF6I0/WLVE=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		3LVGXsNoPLYsx30a1hGwIsDPGm4=
+		aSKnYkH7ouiWztuRjHqtazuXgqM=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		MwJQSFvAc1vrYGzLIaWQ8L0Hzh0=
+		AABtbqftS3/qb+f41zEGOBXMBbE=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		5m0FDd3Kz+3LHAXs6wALGn1D0DY=
+		5tdKVwAEACFzp+YUloF6I0/WLVE=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		AfJ3k3sg5hY6qnCTmCq7leW2tg8=
+		t5P8lSQprBUvZ7BNW0CK1igJ/HE=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		/qPvQj7fUd48taeXuia7OiR4ops=
+		waUswZKLDa5BaZZoIQ60j/92vrM=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		i5EFmOv5c8quva668C3EiqfCFCo=
+		tbNMXXQ2x1IzfpqDDSYxjngZzi0=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		AfJ3k3sg5hY6qnCTmCq7leW2tg8=
+		t5P8lSQprBUvZ7BNW0CK1igJ/HE=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		/qPvQj7fUd48taeXuia7OiR4ops=
+		waUswZKLDa5BaZZoIQ60j/92vrM=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		i5EFmOv5c8quva668C3EiqfCFCo=
+		tbNMXXQ2x1IzfpqDDSYxjngZzi0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -186,7 +186,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tR/jKeM3QMGH4fMqLr6iQKvP0dhiBGBOIeuX7qGJ0HE=
+			q24D43eHNVkBkCYwEQs8/Oo5bPxU4yDc0bnaEIP7SL0=
 			</data>
 		</dict>
 		<key>Frameworks/FleksyApps.framework/Info.plist</key>
@@ -200,14 +200,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vJ2ySYHZrWHJCYAGuakmnusp/GgEKMmfyXTtgSbABDU=
+			n66GIPwhN9iP4pQmbl93HV2Iij0vlshNVKw8gHN0img=
 			</data>
 		</dict>
 		<key>Frameworks/FleksyEngine.framework/FleksyEngine</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dv3M+MlWZcoc5IMAxZkcm8OSiMaKlp0QsA1PJC3ivvQ=
+			ErNe9EHt4CAgOlAkPi9m4VL8A+MfbXFdDZNd2I0W9/w=
 			</data>
 		</dict>
 		<key>Frameworks/FleksyEngine.framework/Info.plist</key>
@@ -235,7 +235,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VHqPTSs88xhvvYLIKhOZyW8Qlld8hX2QoBjKAcAEyjo=
+			7KXesoipN7iGn5Pjf5DD97zqolkACjmAmzBEf1e5z7M=
 			</data>
 		</dict>
 		<key>Frameworks/FleksyEngine.framework/languages.test</key>
@@ -263,7 +263,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zmeaFfwu75LL4pKiiP9ukpP2FJTK9fb3EzxtjRw/EGQ=
+			SPKjQv89/k+VeqzWUq+9YHn9pvJjVLhrhj7+N3GCmVw=
 			</data>
 		</dict>
 		<key>Frameworks/FleksyKeyboardSDK.framework/Info.plist</key>
@@ -284,7 +284,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6i0kVIKzkryZM2qeCw5BkZJm7d4v0TajXXCYMkdhKtY=
+			nxsm7MI6gS9t73Jk4jvIefL02qxf7wcGCZRRLP5cwy0=
 			</data>
 		</dict>
 		<key>Frameworks/FleksyKeyboardSDK.framework/embeddings_200_2_ios_pos_genpos_clust10000_f16.db</key>
@@ -347,21 +347,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YpYl4s57rYemxC3GyxwK8qxaFERelf0yxrr+EkJKKx8=
+			XukFpQiXlCGQqb4a7TEfRnGElea7N91o3TWb/eoN8OE=
 			</data>
 		</dict>
 		<key>Frameworks/ServiceFramework.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1EjExUL/a+GyphUf0uQhRSgTl6t4zknYVFrpHlsuuo0=
+			h6/o1emqOrmqyoZuQytoxoYRSAp36eWlUKMjnFUDjK4=
 			</data>
 		</dict>
 		<key>Headers/KindredSDK-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YVaaKrxvmyMvptTk4E/FRqb/OzmhtEj7jTDSkBVSBGA=
+			p6oImzOuYprn2Q94f5/IMmGgT+X8Hadw1o8VrCreon0=
 			</data>
 		</dict>
 		<key>Headers/KindredSDK.h</key>
@@ -375,84 +375,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PYScEUIkuprHNXirvf0J5hcbsNBZ1Orp1//YXj5DmNA=
+			7hqEQKRF9SX3izUilO6DXVAY4E8ExfsKX1h/o7Pnnjo=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Wi6D1hCcYdN5fOYvL4We75yIQhTRRebMd9YsT9V6okk=
+			86LIFn9vYcH5dNFeZDkjn9W8WXxGinhM4wIZcL9xlkU=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4+vHNpq+OJDKggL6UXP8XWAtAJVcskiMViHUdzDfOaU=
+			AVkk5h7KA0OA+QxL1JsR6eJZfV/DYt9JL3pWdIjPeGI=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PYScEUIkuprHNXirvf0J5hcbsNBZ1Orp1//YXj5DmNA=
+			7hqEQKRF9SX3izUilO6DXVAY4E8ExfsKX1h/o7Pnnjo=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Wi6D1hCcYdN5fOYvL4We75yIQhTRRebMd9YsT9V6okk=
+			86LIFn9vYcH5dNFeZDkjn9W8WXxGinhM4wIZcL9xlkU=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4+vHNpq+OJDKggL6UXP8XWAtAJVcskiMViHUdzDfOaU=
+			AVkk5h7KA0OA+QxL1JsR6eJZfV/DYt9JL3pWdIjPeGI=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZgEodKFGMcAMZQ+X9nn+t2+LdLhLPDoRCvL2GXdST1w=
+			hD8HZLoM7vzp94uyV4zOMbd0vCWEM4LutC01tWTMTVQ=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			j0u/X3RCTZtnhRnxexMFnG1CN3Nm8XXIR4fMl0VdQHU=
+			F+kwziPGJ5Zju21S7lmwcmy2GC7M1RmZS+sJWhxkqXk=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U+zwFr+O2YEDFQEyYhf0HVYjKH+ALKX0LXfeoWNCIsU=
+			3FFbc8pUQCFUj9M5GlxZomq29CPqDNGoz1uEHf2n/zQ=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZgEodKFGMcAMZQ+X9nn+t2+LdLhLPDoRCvL2GXdST1w=
+			hD8HZLoM7vzp94uyV4zOMbd0vCWEM4LutC01tWTMTVQ=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			j0u/X3RCTZtnhRnxexMFnG1CN3Nm8XXIR4fMl0VdQHU=
+			F+kwziPGJ5Zju21S7lmwcmy2GC7M1RmZS+sJWhxkqXk=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U+zwFr+O2YEDFQEyYhf0HVYjKH+ALKX0LXfeoWNCIsU=
+			3FFbc8pUQCFUj9M5GlxZomq29CPqDNGoz1uEHf2n/zQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

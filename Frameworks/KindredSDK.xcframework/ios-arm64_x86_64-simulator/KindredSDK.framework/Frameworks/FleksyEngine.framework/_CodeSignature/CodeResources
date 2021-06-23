@@ -4,30 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/FLButton.h</key>
-		<data>
-		y+c+ZuJzTlXxWn8V2c0+kbOs0Wk=
-		</data>
-		<key>Headers/FLEnums.h</key>
-		<data>
-		AFeKtYeUaTEvTD5nxeGfvu0/pmE=
-		</data>
-		<key>Headers/FleksyCore.h</key>
-		<data>
-		/wn7ZreC8MCx1BXP7GxJuXxT5PI=
-		</data>
-		<key>Headers/FleksyEngine.h</key>
-		<data>
-		fVcK6hmnTAykE9F0r1On+/MEoCQ=
-		</data>
-		<key>Headers/FleksyLayoutElement.h</key>
-		<data>
-		2cErgOVZpkQ/WS5Ht+oe2Izff8Q=
-		</data>
-		<key>Headers/FleksyLayoutElement_Conversion.h</key>
-		<data>
-		g8YlqPAlTebKVSnxvZB6TWkIaiM=
-		</data>
 		<key>Info.plist</key>
 		<data>
 		GPoAOmMjjBozvyUJedW/WOEI0Q0=
@@ -40,10 +16,6 @@
 		<data>
 		fPZzst13HqKO6drXcRhEjIbwvFo=
 		</data>
-		<key>Modules/module.modulemap</key>
-		<data>
-		ZqDMWQ2ZdCO426x6qKCbLcOfQ18=
-		</data>
 		<key>languages.test</key>
 		<data>
 		R/xfWNeZUcMpBhnwHnpkOrXOVJk=
@@ -55,72 +27,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/FLButton.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			y+c+ZuJzTlXxWn8V2c0+kbOs0Wk=
-			</data>
-			<key>hash2</key>
-			<data>
-			TjeioU1I/1aXyDnZRpLB9C0wp9fzf03U+kPaV+2e3z4=
-			</data>
-		</dict>
-		<key>Headers/FLEnums.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			AFeKtYeUaTEvTD5nxeGfvu0/pmE=
-			</data>
-			<key>hash2</key>
-			<data>
-			T9j8MRYE+5f55RplxHyLx9RxVs9nFnQFYpgvF3nCY84=
-			</data>
-		</dict>
-		<key>Headers/FleksyCore.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			/wn7ZreC8MCx1BXP7GxJuXxT5PI=
-			</data>
-			<key>hash2</key>
-			<data>
-			VGdLS3/+1xeRV2o6hwZbyLtbC0m6YHBhbHzeevlC9hk=
-			</data>
-		</dict>
-		<key>Headers/FleksyEngine.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fVcK6hmnTAykE9F0r1On+/MEoCQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			SMT5cnomkSMk8hzPhuy4MDoBeUraY3TgGz46ve5541M=
-			</data>
-		</dict>
-		<key>Headers/FleksyLayoutElement.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2cErgOVZpkQ/WS5Ht+oe2Izff8Q=
-			</data>
-			<key>hash2</key>
-			<data>
-			FmHTkUhjzAScilM+xWQ+0Ak6/p1AZhN2GGgidrhejAU=
-			</data>
-		</dict>
-		<key>Headers/FleksyLayoutElement_Conversion.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			g8YlqPAlTebKVSnxvZB6TWkIaiM=
-			</data>
-			<key>hash2</key>
-			<data>
-			2B0j/IQGLmNbxUNZGIGhRfLpJ5HhWT/RjclokdPGwgs=
-			</data>
-		</dict>
 		<key>Makefile.am</key>
 		<dict>
 			<key>hash</key>
@@ -141,17 +47,6 @@
 			<key>hash2</key>
 			<data>
 			+WVAI/JxDc7jrHhF05YU8CYY6H3dFdnIsVsJS5hVFA4=
-			</data>
-		</dict>
-		<key>Modules/module.modulemap</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZqDMWQ2ZdCO426x6qKCbLcOfQ18=
-			</data>
-			<key>hash2</key>
-			<data>
-			DbYF48zZtgpsVAVnNN0SOjnIBZzHS2guOWIaqWqVFbw=
 			</data>
 		</dict>
 		<key>languages.test</key>
