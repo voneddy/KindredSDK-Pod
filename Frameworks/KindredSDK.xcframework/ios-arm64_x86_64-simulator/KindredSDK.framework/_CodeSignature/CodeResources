@@ -48,6 +48,18 @@
 		<data>
 		qsIVOiFzVUROJiP7UOFsQRhhzkg=
 		</data>
+		<key>Frameworks/FleksyHelperSDK.framework/FleksyHelperSDK</key>
+		<data>
+		qMhH6PVHZuGN4hSv98BpCdjFgFc=
+		</data>
+		<key>Frameworks/FleksyHelperSDK.framework/Info.plist</key>
+		<data>
+		wriJiRKUK1zRIA+a9rpehway7mA=
+		</data>
+		<key>Frameworks/FleksyHelperSDK.framework/_CodeSignature/CodeResources</key>
+		<data>
+		TdfXvJugf3SKBq/EV0yultZeQ9M=
+		</data>
 		<key>Frameworks/FleksyKeyboardSDK.framework/Assets.car</key>
 		<data>
 		Q/AkpvJsh2yOUrM3SRCXaGY15q4=
@@ -110,7 +122,7 @@
 		</data>
 		<key>Headers/KindredSDK-Swift.h</key>
 		<data>
-		31Yi7Lxi+GLXe1FMLwuo54GAVeI=
+		2pgX4qODKME+pl2yN5Ua2koYaEo=
 		</data>
 		<key>Headers/KindredSDK.h</key>
 		<data>
@@ -126,11 +138,11 @@
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		AABtbqftS3/qb+f41zEGOBXMBbE=
+		bYbouhg5aH6ae6ZOLFXKadE8i+I=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		uFplERncZQ1Mw4976gHwNLFHFes=
+		8+spgzzYFtA+LFOvOFlt9IKI03M=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -138,11 +150,11 @@
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		AABtbqftS3/qb+f41zEGOBXMBbE=
+		bYbouhg5aH6ae6ZOLFXKadE8i+I=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		uFplERncZQ1Mw4976gHwNLFHFes=
+		8+spgzzYFtA+LFOvOFlt9IKI03M=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -150,11 +162,11 @@
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		waUswZKLDa5BaZZoIQ60j/92vrM=
+		usdpyBqlenEsYlFST5U/wwxNhmk=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		oH6or0vLx8N2lvGqVtoe1MlXI54=
+		NHAWSctPNxnFHAttvRPYr+ZPkS0=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -162,11 +174,11 @@
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		waUswZKLDa5BaZZoIQ60j/92vrM=
+		usdpyBqlenEsYlFST5U/wwxNhmk=
 		</data>
 		<key>Modules/KindredSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		oH6or0vLx8N2lvGqVtoe1MlXI54=
+		NHAWSctPNxnFHAttvRPYr+ZPkS0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -250,6 +262,27 @@
 			<key>hash2</key>
 			<data>
 			pED63splJ8ebcWgaWr+mBkCTlBArXRj1TsEzcBP64Gc=
+			</data>
+		</dict>
+		<key>Frameworks/FleksyHelperSDK.framework/FleksyHelperSDK</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mA0uXQ0GAiQGLSY7oU+kj0HlsjAEvEHHcfX14wQaQ70=
+			</data>
+		</dict>
+		<key>Frameworks/FleksyHelperSDK.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			W9bAHhOdctGj4iyQkyH5fBT3l0EkHZtJerzMYWHvWSA=
+			</data>
+		</dict>
+		<key>Frameworks/FleksyHelperSDK.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AvF81IAvPhf6ICKRfLpXZ6bcn6qHMoqV7jnJ9S9KCG8=
 			</data>
 		</dict>
 		<key>Frameworks/FleksyKeyboardSDK.framework/Assets.car</key>
@@ -361,7 +394,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			p6oImzOuYprn2Q94f5/IMmGgT+X8Hadw1o8VrCreon0=
+			XY2moegEt6XoQgZkq4LoZq8UYAmCvyFxXagfGQlhr7I=
 			</data>
 		</dict>
 		<key>Headers/KindredSDK.h</key>
@@ -382,14 +415,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			86LIFn9vYcH5dNFeZDkjn9W8WXxGinhM4wIZcL9xlkU=
+			mP97p/pZYziqkdD1zi6LHi6W0i8yMRN35SUNO9hiJj4=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BsrLYUHRLBeHiQ7uxhAyl2EHHi0VkCIYJ+QZFL8bVAQ=
+			283qvk2RYQdgcwAH2PkxntHidYmC1Uvhh2vT0JNOeS8=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/arm64.swiftdoc</key>
@@ -403,14 +436,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			86LIFn9vYcH5dNFeZDkjn9W8WXxGinhM4wIZcL9xlkU=
+			mP97p/pZYziqkdD1zi6LHi6W0i8yMRN35SUNO9hiJj4=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BsrLYUHRLBeHiQ7uxhAyl2EHHi0VkCIYJ+QZFL8bVAQ=
+			283qvk2RYQdgcwAH2PkxntHidYmC1Uvhh2vT0JNOeS8=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -424,14 +457,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			F+kwziPGJ5Zju21S7lmwcmy2GC7M1RmZS+sJWhxkqXk=
+			hSemA2PAS8ggYqlumN3ShlLE96LKHRxIUzbGnoehLpA=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iY34SGrDkgOkilvJD3FBbsMJqGybQJnhTr6+ExcTr9Y=
+			UsflwmbunSYp8diT7asQmESnlTQIeT9oQhE9zxVc0bE=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -445,14 +478,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			F+kwziPGJ5Zju21S7lmwcmy2GC7M1RmZS+sJWhxkqXk=
+			hSemA2PAS8ggYqlumN3ShlLE96LKHRxIUzbGnoehLpA=
 			</data>
 		</dict>
 		<key>Modules/KindredSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iY34SGrDkgOkilvJD3FBbsMJqGybQJnhTr6+ExcTr9Y=
+			UsflwmbunSYp8diT7asQmESnlTQIeT9oQhE9zxVc0bE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

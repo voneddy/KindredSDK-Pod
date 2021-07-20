@@ -1,10 +1,12 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KindredSDK
+import AudioToolbox
 import CommonCrypto
 import CoreTelephony
 import CryptoKit
 import FleksyApps
+import FleksyHelperSDK
 import FleksyKeyboardSDK
 import Foundation
 @_exported import KindredSDK
@@ -50,8 +52,13 @@ import UIKit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
 }
+@objc public class UserConfiguration : ObjectiveC.NSObject {
+  public init(userCountry: Swift.String, userCurrency: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc public class CustomerKeyboardConfiguration : ObjectiveC.NSObject {
-  public init(display: KindredSDK.KeyboardDisplayConfiguration? = KeyboardDisplayConfiguration(), auth: KindredSDK.AuthConfiguration? = AuthConfiguration())
+  public init(display: KindredSDK.KeyboardDisplayConfiguration? = KeyboardDisplayConfiguration(), auth: KindredSDK.AuthConfiguration? = AuthConfiguration(), user: KindredSDK.UserConfiguration, charity: KindredSDK.CharityConfiguration? = nil)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -121,6 +128,11 @@ public class AuthConfiguration {
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+@objc public class CharityConfiguration : ObjectiveC.NSObject {
+  public init(charityId: Swift.String, charityShare: Swift.Int)
+  @objc override dynamic public init()
+  @objc deinit
+}
 public class Debouncer {
   public init(delay: Foundation.TimeInterval)
   public func run(action: @escaping () -> Swift.Void)
@@ -128,6 +140,12 @@ public class Debouncer {
 }
 @objc @_hasMissingDesignatedInitializers public class DealButton : UIKit.UIButton {
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SettingsConfiguration : ObjectiveC.NSObject {
+  public static let shared: KindredSDK.SettingsConfiguration
+  public func initialise()
+  @objc override dynamic public init()
   @objc deinit
 }
 extension KindredSDK.KeyboardDisplayConfiguration.CashbackLabel : Swift.Equatable {}

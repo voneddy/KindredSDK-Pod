@@ -214,6 +214,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+SWIFT_CLASS("_TtC10KindredSDK20CharityConfiguration")
+@interface CharityConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC10KindredSDK29CustomerKeyboardConfiguration")
 @interface CustomerKeyboardConfiguration : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -319,6 +326,19 @@ SWIFT_CLASS("_TtC10KindredSDK15PredictionsView")
 @end
 
 
+SWIFT_CLASS("_TtC10KindredSDK21SettingsConfiguration")
+@interface SettingsConfiguration : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+SWIFT_CLASS("_TtC10KindredSDK17UserConfiguration")
+@interface UserConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -541,6 +561,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+SWIFT_CLASS("_TtC10KindredSDK20CharityConfiguration")
+@interface CharityConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC10KindredSDK29CustomerKeyboardConfiguration")
 @interface CustomerKeyboardConfiguration : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -646,6 +673,19 @@ SWIFT_CLASS("_TtC10KindredSDK15PredictionsView")
 @end
 
 
+SWIFT_CLASS("_TtC10KindredSDK21SettingsConfiguration")
+@interface SettingsConfiguration : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+SWIFT_CLASS("_TtC10KindredSDK17UserConfiguration")
+@interface UserConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
