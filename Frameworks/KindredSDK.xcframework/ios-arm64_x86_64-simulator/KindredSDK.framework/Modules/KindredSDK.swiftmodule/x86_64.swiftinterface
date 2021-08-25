@@ -13,12 +13,14 @@ import Foundation
 import Swift
 import UIKit
 @objc @_hasMissingDesignatedInitializers public class PredictionsView : UIKit.UIView {
-  public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController)
+  public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, textDocumentProxy: UIKit.UITextDocumentProxy)
   public func initialise(_ hasFullAccess: Swift.Bool)
   public func updatePredictions(_ arrayPredictions: Swift.Array<Swift.String>, _ arrayTypes: Swift.Array<Swift.UInt32>)
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
 }
+public func kkprint(_ items: Swift.String..., filename: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line, separator: Swift.String = " ", terminator: Swift.String = "\n")
+public func kkprint(_ items: Any..., separator: Swift.String = " ", terminator: Swift.String = "\n")
 @objc @_hasMissingDesignatedInitializers public class NoFullAccessView : UIKit.UIView {
   @objc dynamic public init()
   public func initialise()
@@ -48,7 +50,7 @@ import UIKit
   final public let fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController!
   public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, currentAppPackageName: Swift.String, showWithdrawal: Swift.Bool = false, withdrawalText: Swift.String? = nil)
   public func setupConstraints()
-  public func updateDeals(text: Swift.String)
+  public func updateDeals(text: Swift.String, couponView: UIKit.UIView?)
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
 }
@@ -94,7 +96,7 @@ public class AuthConfiguration {
   public func getPredictionButton() -> KindredSDK.PredictionButton
   public func getPredictionsView() -> KindredSDK.PredictionsView
   public func initFleksyInterfaceForDealsView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController) -> KindredSDK.DealsView
-  public func initFleksyInterfaceForPredictionView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController) -> KindredSDK.PredictionsView
+  public func initFleksyInterfaceForPredictionView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, textProxy: UIKit.UITextDocumentProxy) -> KindredSDK.PredictionsView
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -123,11 +125,39 @@ public class AuthConfiguration {
   @objc override dynamic open func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
   @objc open func contextPropertiesChanged(_ properties: FleksyKeyboardSDK.KeyboardProperties)
   open func initKeyboard()
+  @objc deinit
   open func configureKeyboard() -> KindredSDK.CustomerKeyboardConfiguration
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class Colours : UIKit.UIColor {
+  public static let standardBackground: UIKit.UIColor
+  public static let loginButtonColour: UIKit.UIColor
+  public static let couponViewBackground: UIKit.UIColor
+  public static let textColour: UIKit.UIColor
+  public static let highlightedDeal: UIKit.UIColor
+  public static let couponTitle: UIKit.UIColor
+  public static var textViewBackground: UIKit.UIColor
+  public static let warningColour: UIKit.UIColor
+  public static let loadingBackground: UIKit.UIColor
+  public static let textViewBorder: UIKit.UIColor
+  public static let withdrawalButtonColour: UIKit.UIColor
+  @objc override dynamic public init(white: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
+  @objc override dynamic public init(hue: CoreGraphics.CGFloat, saturation: CoreGraphics.CGFloat, brightness: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
+  @objc override dynamic public init(red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
+  @available(iOS 10.0, *)
+  @objc override dynamic public init(displayP3Red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
+  @objc override dynamic public init(cgColor: CoreGraphics.CGColor)
+  @objc override dynamic public init(patternImage image: UIKit.UIImage)
+  @available(iOS 5.0, *)
+  @objc override dynamic public init(ciColor: CoreImage.CIColor)
+  @objc override dynamic public init()
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @available(iOS 13.0, *)
+  @objc override dynamic public init(dynamicProvider: @escaping (UIKit.UITraitCollection) -> UIKit.UIColor)
   @objc deinit
 }
+infix operator | : AdditionPrecedence
 @objc public class CharityConfiguration : ObjectiveC.NSObject {
   public init(charityId: Swift.String, charityShare: Swift.Int)
   @objc override dynamic public init()

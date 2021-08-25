@@ -218,6 +218,26 @@ SWIFT_CLASS("_TtC10KindredSDK20CharityConfiguration")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSNumber;
+@class UIImage;
+@class CIColor;
+@class NSCoder;
+@class UITraitCollection;
+
+SWIFT_CLASS("_TtC10KindredSDK7Colours")
+@interface Colours : UIColor
+- (nonnull instancetype)initWithWhite:(CGFloat)white alpha:(CGFloat)alpha OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithDisplayP3Red:(CGFloat)displayP3Red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=10.0);
+- (nonnull instancetype)initWithCGColor:(CGColorRef _Nonnull)cgColor OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithPatternImage:(UIImage * _Nonnull)image OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithCIColor:(CIColor * _Nonnull)ciColor OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=5.0);
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithDynamicProvider:(UIColor * _Nonnull (^ _Nonnull)(UITraitCollection * _Nonnull))dynamicProvider OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=13.0);
+@end
+
 
 SWIFT_CLASS("_TtC10KindredSDK29CustomerKeyboardConfiguration")
 @interface CustomerKeyboardConfiguration : NSObject
@@ -225,12 +245,9 @@ SWIFT_CLASS("_TtC10KindredSDK29CustomerKeyboardConfiguration")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSCoder;
 
 SWIFT_CLASS("_TtC10KindredSDK10DealButton")
 @interface DealButton : UIButton
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
@@ -268,7 +285,6 @@ SWIFT_CLASS("_TtC10KindredSDK25KeyboardSDKViewController")
 @protocol FleksyThemeableUI;
 @class UITouch;
 @class UIEvent;
-@class NSNumber;
 @protocol UITextInput;
 @protocol UIViewControllerTransitionCoordinator;
 @class KeyboardProperties;
@@ -332,11 +348,14 @@ SWIFT_CLASS("_TtC10KindredSDK21SettingsConfiguration")
 
 
 
+
+
 SWIFT_CLASS("_TtC10KindredSDK17UserConfiguration")
 @interface UserConfiguration : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
