@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
    s.name = 'KindredSDK'
-   s.version = '1.0.4'
-   s.license = 'MIT'
-   s.summary = 'TODO'
-   s.homepage = 'http://kindred.com'
+   s.version = '1.0.5'
+   s.license = 'KINDRED'
+   s.summary = 'Kindred Keyboard SDK'
+   s.homepage = 'https://www.kindredsdk.com'
    s.authors = 'Kindred Ltd'
    s.source = { :git => 'https://github.com/kindred-app/KindredSDK-Pod.git', :tag => s.version }
 
