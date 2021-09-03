@@ -9,5 +9,6 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
-- publish: $(System.DefaultWorkingDirectory)
-  artifact: build
+steps:
+  - publish: $(System.DefaultWorkingDirectory)
+    artifact: build
