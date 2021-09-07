@@ -15,7 +15,7 @@ import UIKit
 @objc @_hasMissingDesignatedInitializers public class PredictionsView : UIKit.UIView {
   public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, textDocumentProxy: UIKit.UITextDocumentProxy)
   public func initialise(_ hasFullAccess: Swift.Bool)
-  public func updatePredictions(_ arrayPredictions: Swift.Array<Swift.String>, _ arrayTypes: Swift.Array<Swift.UInt32>)
+  public func updatePredictions(_ arrayPredictions: [Swift.String], _ arrayTypes: [Swift.UInt32])
   @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
@@ -32,7 +32,7 @@ public func kkprint(_ items: Any..., separator: Swift.String = " ", terminator: 
   @objc deinit
 }
 @objc public class KeyboardDisplayConfiguration : ObjectiveC.NSObject {
-  public init(cashbackLabel: Swift.String? = KeyboardDisplayConfiguration.CashbackLabelType(type: KeyboardDisplayConfiguration.CashbackLabel.CASHBACK), showWithdrawal: Swift.Bool? = false)
+  public init(cashbackLabel: Swift.String? = KeyboardDisplayConfiguration.cashbackLabelType(type: KeyboardDisplayConfiguration.CashbackLabel.CASHBACK), showWithdrawal: Swift.Bool? = false)
   public enum CashbackLabel {
     case CASHBACK
     case DONATIONS
@@ -42,7 +42,7 @@ public func kkprint(_ items: Any..., separator: Swift.String = " ", terminator: 
     }
     public func hash(into hasher: inout Swift.Hasher)
   }
-  public static func CashbackLabelType(type: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel) -> Swift.String?
+  public static func cashbackLabelType(type: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel) -> Swift.String?
   @objc deinit
   @objc override dynamic public init()
 }
@@ -69,7 +69,7 @@ public func kkprint(_ items: Any..., separator: Swift.String = " ", terminator: 
   @objc deinit
 }
 public class AuthConfiguration {
-  public init(authMode: Swift.Bool? = AuthConfiguration.AuthModeLabelType(type: AuthConfiguration.AuthMode.EXTERNAL))
+  public init(authMode: Swift.Bool? = AuthConfiguration.authModeLabelType(type: AuthConfiguration.AuthMode.EXTERNAL))
   public enum AuthMode {
     case INTERNAL
     case EXTERNAL
@@ -79,7 +79,7 @@ public class AuthConfiguration {
     }
     public func hash(into hasher: inout Swift.Hasher)
   }
-  public static func AuthModeLabelType(type: KindredSDK.AuthConfiguration.AuthMode) -> Swift.Bool?
+  public static func authModeLabelType(type: KindredSDK.AuthConfiguration.AuthMode) -> Swift.Bool?
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class KeyboardSDKViewController : UIKit.UIViewController {
