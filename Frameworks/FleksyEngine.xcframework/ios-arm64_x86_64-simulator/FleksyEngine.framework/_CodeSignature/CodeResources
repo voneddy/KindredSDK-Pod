@@ -30,15 +30,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		GPoAOmMjjBozvyUJedW/WOEI0Q0=
-		</data>
-		<key>Makefile.am</key>
-		<data>
-		WdXUi+xOHQqwpzK3d3ST6lAenqM=
-		</data>
-		<key>Makefile.in</key>
-		<data>
-		fPZzst13HqKO6drXcRhEjIbwvFo=
+		XbMqxrIhuVwMrsAvE2lZ1e3D3uI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -119,28 +111,6 @@
 			<key>hash2</key>
 			<data>
 			2B0j/IQGLmNbxUNZGIGhRfLpJ5HhWT/RjclokdPGwgs=
-			</data>
-		</dict>
-		<key>Makefile.am</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			WdXUi+xOHQqwpzK3d3ST6lAenqM=
-			</data>
-			<key>hash2</key>
-			<data>
-			JMRzZcn834VAp6rZiA3h6dPPPwLofzOtQk17KDPlzwA=
-			</data>
-		</dict>
-		<key>Makefile.in</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fPZzst13HqKO6drXcRhEjIbwvFo=
-			</data>
-			<key>hash2</key>
-			<data>
-			+WVAI/JxDc7jrHhF05YU8CYY6H3dFdnIsVsJS5hVFA4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

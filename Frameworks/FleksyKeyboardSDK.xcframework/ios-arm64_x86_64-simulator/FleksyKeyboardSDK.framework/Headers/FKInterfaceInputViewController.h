@@ -149,8 +149,12 @@ NS_ASSUME_NONNULL_BEGIN
 // AutoLearn: delete the current learnings
 - (void) deleteAutolearnDictionary;
 
-// Reload configuration
+// Reload Settings
+- (void) reloadSettings;
+// Reload Configuration to Emojis
 - (void) reloadConfiguration:(EmojiConfiguration*) configuration;
+// Reload Dynamic Configuration
+- (void) reloadDynamicConfiguration:(KeyboardDynamicConfiguration*) configuration;
 
 // Add extra Data to collected data
 //

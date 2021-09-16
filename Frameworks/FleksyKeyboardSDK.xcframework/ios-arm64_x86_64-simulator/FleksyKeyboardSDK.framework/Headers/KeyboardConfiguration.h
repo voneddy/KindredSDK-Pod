@@ -83,6 +83,15 @@ typedef NS_ENUM(NSUInteger, enumDataCaptureCoordinate){
 
 @end
 
+//
+// SpaceBar Configuration to configure logo / languages in the spacebar
+//
+typedef NS_ENUM(NSUInteger, enumSpacebarStyle){
+  spacebarStyle_Automatic     = 0,
+  spacebarStyle_LogoOnly      = 1,
+  spacebarStyle_LanguageOnly  = 2
+};
+
 @interface StyleConfiguration : NSObject
 
 - (instancetype) initWithTheme:(NSDictionary*) dictTheme
@@ -90,6 +99,10 @@ typedef NS_ENUM(NSUInteger, enumDataCaptureCoordinate){
 
 @property (nonatomic) NSDictionary* dictForceTheme;
 @property (nonatomic) NSDictionary* dictForceDarkTheme;
+
+@property (nonatomic) NSString* spacebarLogo;
+@property (nonatomic) BOOL fitSpacebarLogo;
+@property (nonatomic) enumSpacebarStyle spacebarStyle;
 
 @end
 
@@ -228,6 +241,17 @@ typedef NS_ENUM(NSUInteger, enumEmojiSkinTone){
 @property (nonatomic) DebugConfiguration *debugConfig;
 
 
+
+@end
+
+
+/// -- Keyboard Dynamic Configuration --
+///  -- Configuration that is able to be reloaded at any time
+@interface KeyboardDynamicConfiguration : NSObject
+
+// If we have enabled custom top bar height, we can change the height of it dynamically
+// In case that we do not have this enabled, we cannot change the height if we do not reload the keyboard
+@property (nonatomic) float heightCustomTopBar;
 
 @end
 

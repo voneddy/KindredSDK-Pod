@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		3EHqACEqOmHAMzsPRTLTjPS2d48=
+		puF+rKrD3bZWEYSpj30CCLYM0vw=
 		</data>
 		<key>Headers/FKAppsConfiguration.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/6yG+tohLusbPZ9J7SxKBIyoEiw=
+		AK6mxhauf8a5ebqTwKZMltOROdI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,11 +51,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3EHqACEqOmHAMzsPRTLTjPS2d48=
+			puF+rKrD3bZWEYSpj30CCLYM0vw=
 			</data>
 			<key>hash2</key>
 			<data>
-			DzEmUbX24CtkflQZXzIjnHI5L6rIxJxRRJ7/5qkx1H4=
+			arTy7JKqSRs9OMObMvWFCo5xsQDgR+HJhP0a5EN3rSY=
 			</data>
 		</dict>
 		<key>Headers/FKAppsConfiguration.h</key>

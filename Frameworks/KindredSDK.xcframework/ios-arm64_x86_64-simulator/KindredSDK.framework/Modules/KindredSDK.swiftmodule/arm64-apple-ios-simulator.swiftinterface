@@ -133,9 +133,9 @@ public class AuthConfiguration {
 @objc @_inheritsConvenienceInitializers public class Colours : UIKit.UIColor {
   public static let standardBackground: UIKit.UIColor
   public static let loginButtonColour: UIKit.UIColor
-  public static let couponViewBackground: UIKit.UIColor
   public static let textColour: UIKit.UIColor
   public static let highlightedDeal: UIKit.UIColor
+  public static let couponViewBackground: UIKit.UIColor
   public static let couponTitle: UIKit.UIColor
   public static var textViewBackground: UIKit.UIColor
   public static let warningColour: UIKit.UIColor

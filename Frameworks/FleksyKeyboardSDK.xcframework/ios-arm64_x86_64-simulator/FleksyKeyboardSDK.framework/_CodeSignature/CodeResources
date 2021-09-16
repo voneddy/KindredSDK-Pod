@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		Q/AkpvJsh2yOUrM3SRCXaGY15q4=
+		XZGMWNGj7dfwuS8ix7geos1VwwE=
 		</data>
 		<key>Headers/AppearanceLongPress.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/FKInterfaceInputViewController.h</key>
 		<data>
-		tCCwEzMqYXvX5Fs4Fs0nP2bi6DQ=
+		51hUWqVapwG7kMYWCXAY8ajXUO4=
 		</data>
 		<key>Headers/FKStatsFileManager.h</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Headers/FleksyKeyPadView.h</key>
 		<data>
-		LHwmvHezilSvPGxE1l9Yj8t9NXU=
+		Zq2bYGo2uEXziFuQTe031RgA0JY=
 		</data>
 		<key>Headers/FleksyKeyboardDisplayStateInfoProvider.h</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Headers/KeyboardConfiguration.h</key>
 		<data>
-		KhNjbJXkTKHPVp87IULF3ui3Ajg=
+		2bbBpkKo4wv4OnQZG9z5I0bwfQM=
 		</data>
 		<key>Headers/KeyboardProperties.h</key>
 		<data>
@@ -150,7 +150,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		H5JRNB4Ltzy33p+2hXfW0ywtV/U=
+		xZvPFejAjeX438nzdFBu9ftwnIY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -195,11 +195,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Q/AkpvJsh2yOUrM3SRCXaGY15q4=
+			XZGMWNGj7dfwuS8ix7geos1VwwE=
 			</data>
 			<key>hash2</key>
 			<data>
-			JyPB07D7Exnmwqum981p9oAY2q/nJscXap+C5M8pG7w=
+			u0CId/02HdymlS1WGgUoIMeMcZQH/VD5KOwuODdIxY4=
 			</data>
 		</dict>
 		<key>Headers/AppearanceLongPress.h</key>
@@ -250,11 +250,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tCCwEzMqYXvX5Fs4Fs0nP2bi6DQ=
+			51hUWqVapwG7kMYWCXAY8ajXUO4=
 			</data>
 			<key>hash2</key>
 			<data>
-			joy4BYFMkmNDV4IAiemmPHzYWakQRC5hB1uqgamc+hw=
+			4tyiDedzkW8Mp2mvJoA/EBN0lkaXwt3ssPrDK5XUcVY=
 			</data>
 		</dict>
 		<key>Headers/FKStatsFileManager.h</key>
@@ -382,11 +382,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LHwmvHezilSvPGxE1l9Yj8t9NXU=
+			Zq2bYGo2uEXziFuQTe031RgA0JY=
 			</data>
 			<key>hash2</key>
 			<data>
-			QzAUGsKUIU1Fy+tVh0YSKaovwEfN/tvXMBBQK/XX0Z4=
+			9NDzrWjay4OQkI1O8QV63eYsG/Znr4b0nVtv9jy1zbk=
 			</data>
 		</dict>
 		<key>Headers/FleksyKeyboardDisplayStateInfoProvider.h</key>
@@ -569,11 +569,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KhNjbJXkTKHPVp87IULF3ui3Ajg=
+			2bbBpkKo4wv4OnQZG9z5I0bwfQM=
 			</data>
 			<key>hash2</key>
 			<data>
-			5g0rVP+SodoXsIzrCk6FDC5WmiZ6MiuUstjMvanWbcg=
+			qQ0dI81Mnl9H9fIpNTHmHNaTPTRNS4NZ/P483A6f6tM=
 			</data>
 		</dict>
 		<key>Headers/KeyboardProperties.h</key>

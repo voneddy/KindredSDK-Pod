@@ -76,6 +76,9 @@
 - (void)unHighlightEnterButton;
 - (void)restorePoppedKeyIfAny;
 
+// Style
+- (void)setSpaceBarLogoImage:(NSString*) imageName configMode:(UIViewContentMode) mode;
+
 // Swipe drawing
 - (void)swipeTypingStream:(CGPoint) point;
 - (void)swipeTypindEnded;
