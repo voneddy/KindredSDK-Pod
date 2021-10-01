@@ -239,6 +239,20 @@ SWIFT_CLASS("_TtC10KindredSDK7Colours")
 @end
 
 
+SWIFT_CLASS("_TtC10KindredSDK17CoreConfiguration")
+@interface CoreConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC10KindredSDK12CoreSettings")
+@interface CoreSettings : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC10KindredSDK29CustomerKeyboardConfiguration")
 @interface CustomerKeyboardConfiguration : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -281,6 +295,11 @@ SWIFT_CLASS("_TtC10KindredSDK25KeyboardSDKViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+SWIFT_CLASS("_TtC10KindredSDK15KindredSettings")
+@interface KindredSettings : CoreSettings
+@end
+
 @protocol FleksyThemeableUI;
 @class UITouch;
 @class UIEvent;
@@ -290,6 +309,8 @@ SWIFT_CLASS("_TtC10KindredSDK25KeyboardSDKViewController")
 
 SWIFT_CLASS("_TtC10KindredSDK21KindredViewController")
 @interface KindredViewController : UIInputViewController <FKInterfaceInputViewControllerDelegate, UIGestureRecognizerDelegate>
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)addKeyboardViewController:(UIViewController * _Nonnull)currentKeyboardVC;
 - (void)addDisplayedViewController:(UIViewController <FleksyThemeableUI> * _Nonnull)displayVC;
 - (void)addExtensionsViewController:(UIViewController * _Nonnull)extensionsVC;
@@ -602,6 +623,20 @@ SWIFT_CLASS("_TtC10KindredSDK7Colours")
 @end
 
 
+SWIFT_CLASS("_TtC10KindredSDK17CoreConfiguration")
+@interface CoreConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC10KindredSDK12CoreSettings")
+@interface CoreSettings : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC10KindredSDK29CustomerKeyboardConfiguration")
 @interface CustomerKeyboardConfiguration : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -644,6 +679,11 @@ SWIFT_CLASS("_TtC10KindredSDK25KeyboardSDKViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+SWIFT_CLASS("_TtC10KindredSDK15KindredSettings")
+@interface KindredSettings : CoreSettings
+@end
+
 @protocol FleksyThemeableUI;
 @class UITouch;
 @class UIEvent;
@@ -653,6 +693,8 @@ SWIFT_CLASS("_TtC10KindredSDK25KeyboardSDKViewController")
 
 SWIFT_CLASS("_TtC10KindredSDK21KindredViewController")
 @interface KindredViewController : UIInputViewController <FKInterfaceInputViewControllerDelegate, UIGestureRecognizerDelegate>
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)addKeyboardViewController:(UIViewController * _Nonnull)currentKeyboardVC;
 - (void)addDisplayedViewController:(UIViewController <FleksyThemeableUI> * _Nonnull)displayVC;
 - (void)addExtensionsViewController:(UIViewController * _Nonnull)extensionsVC;
