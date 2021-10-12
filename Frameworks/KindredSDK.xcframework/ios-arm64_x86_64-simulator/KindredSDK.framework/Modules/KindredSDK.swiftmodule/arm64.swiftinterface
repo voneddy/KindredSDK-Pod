@@ -31,6 +31,8 @@ import UIKit
   public func dealsSearchRequest() -> Swift.String
   public func activateDealRequest() -> Swift.String
   public func isSDKMode() -> Swift.Bool
+  public func isCouponsOnly() -> Swift.Bool
+  public func setCouponsOnly(value: Swift.Bool)
   public func getDeviceId() -> Swift.String?
   @objc deinit
 }
@@ -63,7 +65,6 @@ public struct Deal : Swift.Codable {
   public var cashback: Swift.Float
   public var cashbackType: Swift.String
   public var currency: Swift.String?
-  public var isGive100: Swift.Bool
   public var logo: Swift.String?
   public var codes: [KindredSDK.CouponCodes]?
   public init(from decoder: Swift.Decoder) throws
@@ -82,10 +83,11 @@ public protocol AuthenticationServiceProtocol {
   func authenticateSDK()
 }
 @objc public class KeyboardDisplayConfiguration : ObjectiveC.NSObject {
-  public init(cashbackLabel: Swift.String? = KeyboardDisplayConfiguration.cashbackLabelType(type: KeyboardDisplayConfiguration.CashbackLabel.CASHBACK), showWithdrawal: Swift.Bool? = false)
+  public init(cashbackLabel: Swift.String? = KeyboardDisplayConfiguration.cashbackLabelType(type: KeyboardDisplayConfiguration.CashbackLabel.CASHBACK), showWithdrawal: Swift.Bool? = false, couponsOnly: Swift.Bool? = false)
   public enum CashbackLabel {
     case CASHBACK
     case DONATIONS
+    case NONE
     public static func == (a: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel, b: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel) -> Swift.Bool
     public var hashValue: Swift.Int {
       get
