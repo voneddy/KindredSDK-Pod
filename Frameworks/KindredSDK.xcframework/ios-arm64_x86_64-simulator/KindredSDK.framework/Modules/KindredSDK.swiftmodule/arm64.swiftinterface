@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KindredSDK
 import AudioToolbox
 import CommonCrypto
@@ -12,8 +12,10 @@ import Foundation
 @_exported import KindredSDK
 import Swift
 import UIKit
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CoreSettings : ObjectiveC.NSObject {
+import _Concurrency
+@objc @_inheritsConvenienceInitializers public class CoreSettings : ObjectiveC.NSObject {
   public var sharedSettings: Foundation.UserDefaults
+  @objc override dynamic public init()
   public func saveSetting(obj: Any, key: Swift.String)
   public func getSetting(key: Swift.String, defaultValue: Swift.String? = nil) -> Swift.String
   public func getSettingBool(key: Swift.String, defaultValue: Swift.Bool? = nil) -> Swift.Bool
@@ -27,7 +29,11 @@ import UIKit
   public func saveAccessToken(token: Swift.String)
   public func getAccessToken() -> Swift.String
   public func getUserCurrency() -> Swift.String
+  public func getUserCurrencyFromLocale() -> Swift.String?
   public func getUserCountry() -> Swift.String
+  public func getUserCountryByTelephony() -> Swift.String?
+  public func saveStandardUserCurrency()
+  public func saveStandardUserCountry()
   public func dealsSearchRequest() -> Swift.String
   public func activateDealRequest() -> Swift.String
   public func isSDKMode() -> Swift.Bool
@@ -36,27 +42,24 @@ import UIKit
   public func getDeviceId() -> Swift.String?
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers public class PredictionsView : UIKit.UIView {
-  public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, textDocumentProxy: UIKit.UITextDocumentProxy)
-  public func initialise(_ hasFullAccess: Swift.Bool)
-  public func updatePredictions(_ arrayPredictions: [Swift.String], _ arrayTypes: [Swift.UInt32])
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class PredictionsView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, textDocumentProxy: UIKit.UITextDocumentProxy)
+  @_Concurrency.MainActor(unsafe) public func initialise(_ hasFullAccess: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func updatePredictions(_ arrayPredictions: [Swift.String], _ arrayTypes: [Swift.UInt32])
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 public func kkprint(_ items: Swift.String..., filename: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line, separator: Swift.String = " ", terminator: Swift.String = "\n")
 public func kkprint(_ items: Any..., separator: Swift.String = " ", terminator: Swift.String = "\n")
-@objc @_hasMissingDesignatedInitializers public class NoFullAccessView : UIKit.UIView {
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class NoFullAccessView : UIKit.UIView {
   @objc dynamic public init()
-  public func initialise()
+  @_Concurrency.MainActor(unsafe) public func initialise()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @_hasMissingDesignatedInitializers public class AnalyticsService : KindredSDK.AnalyticsServiceProtocol {
   public func setLastActivityCheck()
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers public class PredictionButton : UIKit.UIButton {
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class PredictionButton : UIKit.UIButton {
   @objc deinit
 }
 public struct Deal : Swift.Codable {
@@ -67,14 +70,14 @@ public struct Deal : Swift.Codable {
   public var currency: Swift.String?
   public var logo: Swift.String?
   public var codes: [KindredSDK.CouponCodes]?
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct CouponCodes : Swift.Codable {
   public var code: Swift.String
   public var summary: Swift.String
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public protocol UserServiceProtocol {
   func setDonationCharity(charityID: Swift.String, charityShare: Swift.Int, completionHandler: @escaping () -> Swift.Void)
@@ -89,25 +92,23 @@ public protocol AuthenticationServiceProtocol {
     case DONATIONS
     case NONE
     public static func == (a: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel, b: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public static func cashbackLabelType(type: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel) -> Swift.String?
   @objc deinit
-  @objc override dynamic public init()
 }
 public protocol AnalyticsServiceProtocol {
   func setLastActivityCheck()
 }
-@objc @_hasMissingDesignatedInitializers public class DealsView : UIKit.UIScrollView {
-  final public let fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController!
-  public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, currentAppPackageName: Swift.String, showWithdrawal: Swift.Bool = false, withdrawalText: Swift.String? = nil)
-  public func setupConstraints()
-  public func updateDeals(text: Swift.String, couponView: UIKit.UIView?)
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DealsView : UIKit.UIScrollView {
+  @_Concurrency.MainActor(unsafe) final public let fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController!
+  @_Concurrency.MainActor(unsafe) public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, currentAppPackageName: Swift.String, showWithdrawal: Swift.Bool = false, withdrawalText: Swift.String? = nil)
+  @_Concurrency.MainActor(unsafe) public func setupConstraints()
+  @_Concurrency.MainActor(unsafe) public func updateDeals(text: Swift.String, couponView: UIKit.UIView?)
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @_hasMissingDesignatedInitializers public class OneTimeLinkService : KindredSDK.OneTimeLinkServiceProtocol {
   public func getOnetimeAuthenticationId(completionHandler: @escaping (Swift.String) -> Swift.Void)
@@ -135,26 +136,22 @@ public protocol InjectionKey {
 @objc public class UserConfiguration : ObjectiveC.NSObject {
   public init(userCountry: Swift.String, userCurrency: Swift.String)
   @objc deinit
-  @objc override dynamic public init()
 }
 public struct Charity : Swift.Decodable {
   public init(from decoder: Swift.Decoder) throws
 }
-extension Charity {
+extension KindredSDK.Charity {
   public static func setCharity(for charityID: Swift.String, charityShare: Swift.Int) -> KindredSDK.Request<KindredSDK.Charity>
 }
 @objc public class CharityConfiguration : ObjectiveC.NSObject {
   public init(charityId: Swift.String, charityShare: Swift.Int)
   @objc deinit
-  @objc override dynamic public init()
 }
 @objc public class CustomerKeyboardConfiguration : ObjectiveC.NSObject {
-  public init(display: KindredSDK.KeyboardDisplayConfiguration? = KeyboardDisplayConfiguration(), auth: KindredSDK.AuthConfiguration? = AuthConfiguration(), user: KindredSDK.UserConfiguration, charity: KindredSDK.CharityConfiguration? = nil)
+  public init(display: KindredSDK.KeyboardDisplayConfiguration? = KeyboardDisplayConfiguration(), auth: KindredSDK.AuthConfiguration? = AuthConfiguration(), user: KindredSDK.UserConfiguration? = nil, charity: KindredSDK.CharityConfiguration? = nil)
   @objc deinit
-  @objc override dynamic public init()
 }
-@objc @_hasMissingDesignatedInitializers public class KMenuButton : UIKit.UIButton {
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class KMenuButton : UIKit.UIButton {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class UserService : KindredSDK.UserServiceProtocol {
@@ -167,10 +164,10 @@ public class AuthConfiguration {
     case INTERNAL
     case EXTERNAL
     public static func == (a: KindredSDK.AuthConfiguration.AuthMode, b: KindredSDK.AuthConfiguration.AuthMode) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public static func authModeLabelType(type: KindredSDK.AuthConfiguration.AuthMode) -> Swift.Bool?
   @objc deinit
@@ -182,53 +179,53 @@ public struct Request<Value> {
   public func getDealUniqueTrackingLink(for dealID: Swift.String, analytics: [Swift.String : Swift.String?], completionHandler: @escaping (KindredSDK.DealClick) -> Swift.Void)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers public class KeyboardSDKViewController : UIKit.UIViewController {
-  public var dealsView: KindredSDK.DealsView!
-  public var dealButton: KindredSDK.DealButton
-  public var kMenuButton: KindredSDK.KMenuButton!
-  public var noFullAccessView: KindredSDK.NoFullAccessView!
-  public var predictionButton: KindredSDK.PredictionButton!
-  public var predictionsView: KindredSDK.PredictionsView!
-  public func getDealsView() -> KindredSDK.DealsView
-  public func getDealButton() -> KindredSDK.DealButton
-  public func getKMenuButton() -> KindredSDK.KMenuButton
-  public func getNoFullAccessView() -> KindredSDK.NoFullAccessView
-  public func getPredictionButton() -> KindredSDK.PredictionButton
-  public func getPredictionsView() -> KindredSDK.PredictionsView
-  public func initFleksyInterfaceForDealsView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController) -> KindredSDK.DealsView
-  public func initFleksyInterfaceForPredictionView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, textProxy: UIKit.UITextDocumentProxy) -> KindredSDK.PredictionsView
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class KeyboardSDKViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var dealsView: KindredSDK.DealsView!
+  @_Concurrency.MainActor(unsafe) public var dealButton: KindredSDK.DealButton
+  @_Concurrency.MainActor(unsafe) public var kMenuButton: KindredSDK.KMenuButton!
+  @_Concurrency.MainActor(unsafe) public var noFullAccessView: KindredSDK.NoFullAccessView!
+  @_Concurrency.MainActor(unsafe) public var predictionButton: KindredSDK.PredictionButton!
+  @_Concurrency.MainActor(unsafe) public var predictionsView: KindredSDK.PredictionsView!
+  @_Concurrency.MainActor(unsafe) public func getDealsView() -> KindredSDK.DealsView
+  @_Concurrency.MainActor(unsafe) public func getDealButton() -> KindredSDK.DealButton
+  @_Concurrency.MainActor(unsafe) public func getKMenuButton() -> KindredSDK.KMenuButton
+  @_Concurrency.MainActor(unsafe) public func getNoFullAccessView() -> KindredSDK.NoFullAccessView
+  @_Concurrency.MainActor(unsafe) public func getPredictionButton() -> KindredSDK.PredictionButton
+  @_Concurrency.MainActor(unsafe) public func getPredictionsView() -> KindredSDK.PredictionsView
+  @_Concurrency.MainActor(unsafe) public func initFleksyInterfaceForDealsView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController) -> KindredSDK.DealsView
+  @_Concurrency.MainActor(unsafe) public func initFleksyInterfaceForPredictionView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, textProxy: UIKit.UITextDocumentProxy) -> KindredSDK.PredictionsView
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers open class KindredViewController : UIKit.UIInputViewController, FleksyKeyboardSDK.FKInterfaceInputViewControllerDelegate, UIKit.UIGestureRecognizerDelegate {
-  @objc open func addKeyboardViewController(_ currentKeyboardVC: UIKit.UIViewController)
-  @objc open func addDisplayedViewController(_ displayVC: UIKit.UIViewController & FleksyKeyboardSDK.FleksyThemeableUI)
-  @objc open func addExtensionsViewController(_ extensionsVC: UIKit.UIViewController)
-  @objc open func triggerOpenApp()
-  @objc open func eventBus(_ event: Swift.String, payload dictPayload: [Swift.AnyHashable : Any])
-  open func setUserId(userId: Swift.String)
-  @objc open func dataCollection(_ data: Swift.String)
-  @objc open func dismissKeyboardButton()
-  @objc open func changeKeyboardButton()
-  @objc override dynamic open func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @objc override dynamic open func loadView()
-  @objc override dynamic open func viewDidLoad()
-  @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
-  @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
-  @objc override dynamic open func textWillChange(_ textInput: UIKit.UITextInput?)
-  @objc override dynamic open func textDidChange(_ textInput: UIKit.UITextInput?)
-  @objc override dynamic open func selectionDidChange(_ textInput: UIKit.UITextInput?)
-  @objc override dynamic open func selectionWillChange(_ textInput: UIKit.UITextInput?)
-  open func createConstraintsInputView(_ myself: KindredSDK.KindredViewController)
-  @objc override dynamic open func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
-  @objc open func contextPropertiesChanged(_ properties: FleksyKeyboardSDK.KeyboardProperties)
-  open func initKeyboard()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class KindredViewController : UIKit.UIInputViewController, FleksyKeyboardSDK.FKInterfaceInputViewControllerDelegate, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc open func addKeyboardViewController(_ currentKeyboardVC: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc open func addDisplayedViewController(_ displayVC: UIKit.UIViewController & FleksyKeyboardSDK.FleksyThemeableUI)
+  @_Concurrency.MainActor(unsafe) @objc open func addExtensionsViewController(_ extensionsVC: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc open func triggerOpenApp()
+  @_Concurrency.MainActor(unsafe) @objc open func eventBus(_ event: Swift.String, payload dictPayload: [Swift.AnyHashable : Any])
+  @_Concurrency.MainActor(unsafe) open func setUserId(userId: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc open func dataCollection(_ data: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc open func dismissKeyboardButton()
+  @_Concurrency.MainActor(unsafe) @objc open func changeKeyboardButton()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func textWillChange(_ textInput: UIKit.UITextInput?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func textDidChange(_ textInput: UIKit.UITextInput?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func selectionDidChange(_ textInput: UIKit.UITextInput?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func selectionWillChange(_ textInput: UIKit.UITextInput?)
+  @_Concurrency.MainActor(unsafe) open func createConstraintsInputView(_ myself: KindredSDK.KindredViewController)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc open func contextPropertiesChanged(_ properties: FleksyKeyboardSDK.KeyboardProperties)
+  @_Concurrency.MainActor(unsafe) open func initKeyboard()
   @objc deinit
-  open func configureKeyboard() -> KindredSDK.CustomerKeyboardConfiguration
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) open func configureKeyboard() -> KindredSDK.CustomerKeyboardConfiguration
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 @objc @_inheritsConvenienceInitializers public class Colours : UIKit.UIColor {
   public static let standardBackground: UIKit.UIColor
@@ -250,7 +247,6 @@ public struct Request<Value> {
   public static let justBlack: UIKit.UIColor
   public static let transparent: UIKit.UIColor
   public static let blueColour: UIKit.UIColor
-  @objc deinit
   @objc override dynamic public init(white: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
   @objc override dynamic public init(hue: CoreGraphics.CGFloat, saturation: CoreGraphics.CGFloat, brightness: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
   @objc override dynamic public init(red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
@@ -264,11 +260,11 @@ public struct Request<Value> {
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @available(iOS 13.0, *)
   @objc override dynamic public init(dynamicProvider: @escaping (UIKit.UITraitCollection) -> UIKit.UIColor)
+  @objc deinit
 }
 infix operator | : AdditionPrecedence
 @objc public class CoreConfiguration : ObjectiveC.NSObject {
   public init(clientId: Swift.String, clientSecret: Swift.String, sharedKey: Swift.String, apiUrl: Swift.String, cdnUrl: Swift.String)
-  @objc override dynamic public init()
   @objc deinit
 }
 public protocol OneTimeLinkServiceProtocol {
@@ -292,8 +288,7 @@ public class Debouncer {
   public func run(action: @escaping () -> Swift.Void)
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers public class DealButton : UIKit.UIButton {
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DealButton : UIKit.UIButton {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KindredSettings : KindredSDK.CoreSettings {
