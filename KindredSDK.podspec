@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
    s.name = 'KindredSDK'
-   s.version = '1.2.1'
+   s.version = '1.2.2'
    s.license = 'KINDRED'
    s.summary = 'Kindred Keyboard SDK'
    s.homepage = 'https://www.kindredsdk.com'
@@ -14,4 +14,12 @@ Pod::Spec.new do |s|
    s.ios.vendored_frameworks = 'Frameworks/FleksyApps.xcframework', 'Frameworks/KindredSDK.xcframework', 'Frameworks/FleksyEngine.xcframework', 'Frameworks/FleksyKeyboardSDK.xcframework', 'Frameworks/ServiceFramework.xcframework', 'Frameworks/FleksyHelperSDK.xcframework'
    s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
    s.requires_arc = true
+
+   s.subspec 'Core' do |core|
+      core.ios.vendored_frameworks = 'Frameworks/KindredSDKCore.xcframework'
+   end
+
+   s.subspec 'KindredSDK' do |sdk|
+      sdk.dependency 'KindredSDK/Core'
+   end
 end

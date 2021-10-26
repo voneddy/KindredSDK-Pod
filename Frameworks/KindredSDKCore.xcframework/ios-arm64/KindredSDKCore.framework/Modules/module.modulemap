@@ -1,0 +1,6 @@
+framework module KindredSDKCore {
+  umbrella header "KindredSDKCore.h"
+
+  export *
+  module * { export * }
+}
