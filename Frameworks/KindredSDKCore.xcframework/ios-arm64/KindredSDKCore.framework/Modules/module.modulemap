@@ -4,3 +4,8 @@ framework module KindredSDKCore {
   export *
   module * { export * }
 }
+
+module KindredSDKCore.Swift {
+    header "KindredSDKCore-Swift.h"
+    requires objc
+}

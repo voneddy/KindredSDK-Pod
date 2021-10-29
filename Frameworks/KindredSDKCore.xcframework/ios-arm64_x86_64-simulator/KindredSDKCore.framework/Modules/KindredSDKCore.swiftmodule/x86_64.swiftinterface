@@ -1,0 +1,252 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KindredSDKCore
+import CommonCrypto
+import CoreTelephony
+import CryptoKit
+import Foundation
+@_exported import KindredSDKCore
+import Swift
+import UIKit
+import _Concurrency
+public struct InjectedValues {
+}
+extension KindredSDKCore.InjectedValues {
+  public var dealsService: KindredSDKCore.DealsServiceProtocol {
+    get
+    set
+  }
+  public var settings: KindredSDKCore.CoreSettingsProtocol {
+    get
+    set
+  }
+  public var oneTimeLinkService: KindredSDKCore.OneTimeLinkServiceProtocol {
+    get
+    set
+  }
+  public var userService: KindredSDKCore.UserServiceProtocol {
+    get
+    set
+  }
+  public var authenticationService: KindredSDKCore.AuthenticationServiceProtocol {
+    get
+    set
+  }
+  public var analyticsService: KindredSDKCore.AnalyticsServiceProtocol {
+    get
+    set
+  }
+  public var tokenManager: KindredSDKCore.TokenManagerProtocol {
+    get
+    set
+  }
+  public var apiManager: KindredSDKCore.APIManagerProtocol {
+    get
+    set
+  }
+  public var apiSettings: KindredSDKCore.ApiSettingsProtocol {
+    get
+    set
+  }
+}
+@propertyWrapper public struct Injected<T> {
+  public var wrappedValue: T {
+    get
+    set
+  }
+  public init(_ keyPath: Swift.WritableKeyPath<KindredSDKCore.InjectedValues, T>)
+}
+public protocol InjectionKey {
+  associatedtype Value
+  static var currentValue: Self.Value { get set }
+}
+@objc public class CoreConfiguration : ObjectiveC.NSObject {
+  public init(clientId: Swift.String, clientSecret: Swift.String, sharedKey: Swift.String, apiUrl: Swift.String, cdnUrl: Swift.String)
+  @objc deinit
+}
+public protocol DealsServiceProtocol {
+  func searchForDeals(searchTerm: Swift.String, completionHandler: @escaping ([KindredSDKCore.Deal]) -> Swift.Void)
+  func getDealUniqueTrackingLink(for dealID: Swift.String, analytics: [Swift.String : Swift.String?], completionHandler: @escaping (KindredSDKCore.DealClick) -> Swift.Void)
+}
+public protocol OneTimeLinkServiceProtocol {
+  func getOnetimeAuthenticationId(completionHandler: @escaping (Swift.String) -> Swift.Void)
+}
+public protocol UserServiceProtocol {
+  func setDonationCharity(charityID: Swift.String, charityShare: Swift.Int, completionHandler: @escaping () -> Swift.Void)
+}
+public protocol AuthenticationServiceProtocol {
+  func authenticateSDK()
+}
+public protocol AnalyticsServiceProtocol {
+  func setLastActivityCheck()
+}
+@_hasMissingDesignatedInitializers public class OneTimeLinkService : KindredSDKCore.OneTimeLinkServiceProtocol {
+  public func getOnetimeAuthenticationId(completionHandler: @escaping (Swift.String) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class UserService : KindredSDKCore.UserServiceProtocol {
+  public func setDonationCharity(charityID: Swift.String, charityShare: Swift.Int, completionHandler: @escaping () -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class AuthenticationService : KindredSDKCore.AuthenticationServiceProtocol {
+  public func authenticateSDK()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DealsService : KindredSDKCore.DealsServiceProtocol {
+  public func searchForDeals(searchTerm: Swift.String, completionHandler: @escaping ([KindredSDKCore.Deal]) -> Swift.Void)
+  public func getDealUniqueTrackingLink(for dealID: Swift.String, analytics: [Swift.String : Swift.String?], completionHandler: @escaping (KindredSDKCore.DealClick) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class AnalyticsService : KindredSDKCore.AnalyticsServiceProtocol {
+  public func setLastActivityCheck()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class KindredManager {
+  @objc deinit
+}
+public protocol TokenManagerProtocol {
+  func getToken() throws -> KindredSDKCore.Request<KindredSDKCore.Token>
+  func sdkAuth() throws -> KindredSDKCore.Request<KindredSDKCore.Token>?
+}
+public protocol APIManagerProtocol {
+  func executeToken<Value>(_ request: KindredSDKCore.Request<Value>, completion: @escaping (Swift.Result<Value, KindredSDKCore.APIError>) -> Swift.Void) where Value : Swift.Decodable
+  func execute<Value>(_ request: KindredSDKCore.Request<Value>, completion: @escaping (Swift.Result<Value?, KindredSDKCore.APIError>) -> Swift.Void) where Value : Swift.Decodable
+}
+public enum APIError : Swift.Error {
+  case networkError
+  case parsingError
+  case tokenExpire
+  public static func == (a: KindredSDKCore.APIError, b: KindredSDKCore.APIError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public func getClickAnalytics(countryCode: Swift.String, model: Swift.String, carrier: Swift.String, browser: Swift.String?) -> [Swift.String : Swift.String?]
+public struct DealClick : Swift.Decodable {
+  public var link: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Charity : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+extension KindredSDKCore.Charity {
+  public static func setCharity(for charityID: Swift.String, charityShare: Swift.Int) -> KindredSDKCore.Request<KindredSDKCore.Charity>
+}
+@objc public class CharityConfiguration : ObjectiveC.NSObject {
+  public var charityId: Swift.String {
+    get
+  }
+  public var charityShare: Swift.Int {
+    get
+  }
+  public init(charityId: Swift.String, charityShare: Swift.Int)
+  @objc deinit
+}
+public struct Request<Value> {
+}
+public struct Deal : Swift.Codable {
+  public var dealId: Swift.String
+  public var storeName: Swift.String
+  public var cashback: Swift.Float
+  public var cashbackType: Swift.String
+  public var currency: Swift.String?
+  public var logo: Swift.String?
+  public var codes: [KindredSDKCore.CouponCodes]?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct CouponCodes : Swift.Codable {
+  public var code: Swift.String
+  public var summary: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Token : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+public protocol CoreSettingsProtocol : ObjectiveC.NSObject {
+  func saveSetting(obj: Any, key: Swift.String)
+  func getSetting(key: Swift.String, defaultValue: Swift.String?) -> Swift.String
+  func getSettingBool(key: Swift.String, defaultValue: Swift.Bool?) -> Swift.Bool
+  func getSettingInt(key: Swift.String, defaultValue: Swift.Int) -> Swift.Int
+  func getSettingArray(key: Swift.String) -> [Swift.String]
+  func removeSettings(key: Swift.String)
+  func setUserId(userId: Swift.String)
+  func getUserId() throws -> Swift.String
+  func saveRefreshToken(token: Swift.String)
+  func getRefreshToken() -> Swift.String?
+  func saveAccessToken(token: Swift.String)
+  func getAccessToken() -> Swift.String
+  func getUserCurrency() -> Swift.String
+  func getUserCurrencyFromLocale() -> Swift.String?
+  func getUserCountry() -> Swift.String
+  func getUserCountryByTelephony() -> Swift.String?
+  func saveStandardUserCountry()
+  func saveStandardUserCurrency()
+  func dealsSearchRequest() -> Swift.String
+  func activateDealRequest() -> Swift.String
+  func isSDKMode() -> Swift.Bool
+  func getDeviceId() -> Swift.String?
+  func setCouponsOnly(value: Swift.Bool)
+  func isCouponsOnly() -> Swift.Bool
+}
+public protocol ApiSettingsProtocol {
+  func setup(configuration: KindredSDKCore.CoreConfiguration)
+  func getClientId() throws -> Swift.String
+  func getClientSecret() throws -> Swift.String
+  func getSharedKey() throws -> Swift.String
+  func getBaseUrl(path: Swift.String?) -> Swift.String
+  func getImageUrl(path: Swift.String) -> Swift.String
+}
+@objc @_inheritsConvenienceInitializers open class CoreSettings : ObjectiveC.NSObject, KindredSDKCore.CoreSettingsProtocol {
+  public static let kkAccessToken: Swift.String
+  public static let kkRefreshToken: Swift.String
+  public static let kkUserId: Swift.String
+  public static let kkSDKMode: Swift.String
+  public static let kkDeviceId: Swift.String
+  public static let kkUserCurrency: Swift.String
+  public static let kkUserCountry: Swift.String
+  public static let kkCharityId: Swift.String
+  public static let kkCharityShare: Swift.String
+  public static let kkLastActiveCheck: Swift.String
+  public static let kkCouponsOnly: Swift.String
+  public var sharedSettings: Foundation.UserDefaults
+  @objc override dynamic public init()
+  public func saveSetting(obj: Any, key: Swift.String)
+  public func getSetting(key: Swift.String, defaultValue: Swift.String? = nil) -> Swift.String
+  public func getSettingBool(key: Swift.String, defaultValue: Swift.Bool? = nil) -> Swift.Bool
+  public func getSettingInt(key: Swift.String, defaultValue: Swift.Int) -> Swift.Int
+  public func getSettingArray(key: Swift.String) -> [Swift.String]
+  public func removeSettings(key: Swift.String)
+  public func setUserId(userId: Swift.String)
+  public func getUserId() throws -> Swift.String
+  public func saveRefreshToken(token: Swift.String)
+  public func getRefreshToken() -> Swift.String?
+  public func saveAccessToken(token: Swift.String)
+  public func getAccessToken() -> Swift.String
+  public func getUserCurrency() -> Swift.String
+  public func getUserCurrencyFromLocale() -> Swift.String?
+  public func getUserCountry() -> Swift.String
+  public func getUserCountryByTelephony() -> Swift.String?
+  public func saveStandardUserCurrency()
+  public func saveStandardUserCountry()
+  public func dealsSearchRequest() -> Swift.String
+  public func activateDealRequest() -> Swift.String
+  public func isSDKMode() -> Swift.Bool
+  public func isCouponsOnly() -> Swift.Bool
+  public func setCouponsOnly(value: Swift.Bool)
+  public func getDeviceId() -> Swift.String?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ApiSettings : KindredSDKCore.ApiSettingsProtocol {
+  public func setup(configuration: KindredSDKCore.CoreConfiguration)
+  public func getClientId() throws -> Swift.String
+  public func getClientSecret() throws -> Swift.String
+  public func getSharedKey() throws -> Swift.String
+  public func getBaseUrl(path: Swift.String? = "") -> Swift.String
+  public func getImageUrl(path: Swift.String) -> Swift.String
+  @objc deinit
+}
+extension KindredSDKCore.APIError : Swift.Equatable {}
+extension KindredSDKCore.APIError : Swift.Hashable {}

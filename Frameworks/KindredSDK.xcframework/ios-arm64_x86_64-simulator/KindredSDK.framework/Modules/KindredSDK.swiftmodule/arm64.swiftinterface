@@ -2,46 +2,16 @@
 // swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KindredSDK
 import AudioToolbox
-import CommonCrypto
 import CoreTelephony
-import CryptoKit
 import FleksyApps
 import FleksyHelperSDK
 import FleksyKeyboardSDK
 import Foundation
 @_exported import KindredSDK
+import KindredSDKCore
 import Swift
 import UIKit
 import _Concurrency
-@objc @_inheritsConvenienceInitializers public class CoreSettings : ObjectiveC.NSObject {
-  public var sharedSettings: Foundation.UserDefaults
-  @objc override dynamic public init()
-  public func saveSetting(obj: Any, key: Swift.String)
-  public func getSetting(key: Swift.String, defaultValue: Swift.String? = nil) -> Swift.String
-  public func getSettingBool(key: Swift.String, defaultValue: Swift.Bool? = nil) -> Swift.Bool
-  public func getSettingInt(key: Swift.String, defaultValue: Swift.Int) -> Swift.Int
-  public func getSettingArray(key: Swift.String) -> [Swift.String]
-  public func removeSettings(key: Swift.String)
-  public func setUserId(userId: Swift.String)
-  public func getUserId() throws -> Swift.String
-  public func saveRefreshToken(token: Swift.String)
-  public func getRefreshToken() -> Swift.String?
-  public func saveAccessToken(token: Swift.String)
-  public func getAccessToken() -> Swift.String
-  public func getUserCurrency() -> Swift.String
-  public func getUserCurrencyFromLocale() -> Swift.String?
-  public func getUserCountry() -> Swift.String
-  public func getUserCountryByTelephony() -> Swift.String?
-  public func saveStandardUserCurrency()
-  public func saveStandardUserCountry()
-  public func dealsSearchRequest() -> Swift.String
-  public func activateDealRequest() -> Swift.String
-  public func isSDKMode() -> Swift.Bool
-  public func isCouponsOnly() -> Swift.Bool
-  public func setCouponsOnly(value: Swift.Bool)
-  public func getDeviceId() -> Swift.String?
-  @objc deinit
-}
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class PredictionsView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, textDocumentProxy: UIKit.UITextDocumentProxy)
   @_Concurrency.MainActor(unsafe) public func initialise(_ hasFullAccess: Swift.Bool)
@@ -55,35 +25,8 @@ public func kkprint(_ items: Any..., separator: Swift.String = " ", terminator: 
   @_Concurrency.MainActor(unsafe) public func initialise()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class AnalyticsService : KindredSDK.AnalyticsServiceProtocol {
-  public func setLastActivityCheck()
-  @objc deinit
-}
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class PredictionButton : UIKit.UIButton {
   @objc deinit
-}
-public struct Deal : Swift.Codable {
-  public var dealId: Swift.String
-  public var storeName: Swift.String
-  public var cashback: Swift.Float
-  public var cashbackType: Swift.String
-  public var currency: Swift.String?
-  public var logo: Swift.String?
-  public var codes: [KindredSDK.CouponCodes]?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct CouponCodes : Swift.Codable {
-  public var code: Swift.String
-  public var summary: Swift.String
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public protocol UserServiceProtocol {
-  func setDonationCharity(charityID: Swift.String, charityShare: Swift.Int, completionHandler: @escaping () -> Swift.Void)
-}
-public protocol AuthenticationServiceProtocol {
-  func authenticateSDK()
 }
 @objc public class KeyboardDisplayConfiguration : ObjectiveC.NSObject {
   public init(cashbackLabel: Swift.String? = KeyboardDisplayConfiguration.cashbackLabelType(type: KeyboardDisplayConfiguration.CashbackLabel.CASHBACK), showWithdrawal: Swift.Bool? = false, couponsOnly: Swift.Bool? = false)
@@ -100,9 +43,6 @@ public protocol AuthenticationServiceProtocol {
   public static func cashbackLabelType(type: KindredSDK.KeyboardDisplayConfiguration.CashbackLabel) -> Swift.String?
   @objc deinit
 }
-public protocol AnalyticsServiceProtocol {
-  func setLastActivityCheck()
-}
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DealsView : UIKit.UIScrollView {
   @_Concurrency.MainActor(unsafe) final public let fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController!
   @_Concurrency.MainActor(unsafe) public init(_ fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, currentAppPackageName: Swift.String, showWithdrawal: Swift.Bool = false, withdrawalText: Swift.String? = nil)
@@ -110,52 +50,15 @@ public protocol AnalyticsServiceProtocol {
   @_Concurrency.MainActor(unsafe) public func updateDeals(text: Swift.String, couponView: UIKit.UIView?)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class OneTimeLinkService : KindredSDK.OneTimeLinkServiceProtocol {
-  public func getOnetimeAuthenticationId(completionHandler: @escaping (Swift.String) -> Swift.Void)
-  @objc deinit
-}
-public protocol ApiSettingsProtocol {
-  func setup(configuration: KindredSDK.CoreConfiguration)
-  func getClientId() throws -> Swift.String
-  func getClientSecret() throws -> Swift.String
-  func getSharedKey() throws -> Swift.String
-  func getBaseUrl(path: Swift.String?) -> Swift.String
-  func getImageUrl(path: Swift.String) -> Swift.String
-}
-public struct DealClick : Swift.Decodable {
-  public var link: Swift.String?
-  public init(from decoder: Swift.Decoder) throws
-}
-@_hasMissingDesignatedInitializers public class KindredManager {
-  @objc deinit
-}
-public protocol InjectionKey {
-  associatedtype Value
-  static var currentValue: Self.Value { get set }
-}
 @objc public class UserConfiguration : ObjectiveC.NSObject {
   public init(userCountry: Swift.String, userCurrency: Swift.String)
   @objc deinit
 }
-public struct Charity : Swift.Decodable {
-  public init(from decoder: Swift.Decoder) throws
-}
-extension KindredSDK.Charity {
-  public static func setCharity(for charityID: Swift.String, charityShare: Swift.Int) -> KindredSDK.Request<KindredSDK.Charity>
-}
-@objc public class CharityConfiguration : ObjectiveC.NSObject {
-  public init(charityId: Swift.String, charityShare: Swift.Int)
-  @objc deinit
-}
 @objc public class CustomerKeyboardConfiguration : ObjectiveC.NSObject {
-  public init(display: KindredSDK.KeyboardDisplayConfiguration? = KeyboardDisplayConfiguration(), auth: KindredSDK.AuthConfiguration? = AuthConfiguration(), user: KindredSDK.UserConfiguration? = nil, charity: KindredSDK.CharityConfiguration? = nil)
+  public init(display: KindredSDK.KeyboardDisplayConfiguration? = KeyboardDisplayConfiguration(), auth: KindredSDK.AuthConfiguration? = AuthConfiguration(), user: KindredSDK.UserConfiguration? = nil, charity: KindredSDKCore.CharityConfiguration? = nil)
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class KMenuButton : UIKit.UIButton {
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class UserService : KindredSDK.UserServiceProtocol {
-  public func setDonationCharity(charityID: Swift.String, charityShare: Swift.Int, completionHandler: @escaping () -> Swift.Void)
   @objc deinit
 }
 public class AuthConfiguration {
@@ -170,13 +73,6 @@ public class AuthConfiguration {
     }
   }
   public static func authModeLabelType(type: KindredSDK.AuthConfiguration.AuthMode) -> Swift.Bool?
-  @objc deinit
-}
-public struct Request<Value> {
-}
-@_hasMissingDesignatedInitializers public class DealsService {
-  public func searchForDeals(searchTerm: Swift.String, completionHandler: @escaping ([KindredSDK.Deal]) -> Swift.Void)
-  public func getDealUniqueTrackingLink(for dealID: Swift.String, analytics: [Swift.String : Swift.String?], completionHandler: @escaping (KindredSDK.DealClick) -> Swift.Void)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class KeyboardSDKViewController : UIKit.UIViewController {
@@ -263,26 +159,6 @@ public struct Request<Value> {
   @objc deinit
 }
 infix operator | : AdditionPrecedence
-@objc public class CoreConfiguration : ObjectiveC.NSObject {
-  public init(clientId: Swift.String, clientSecret: Swift.String, sharedKey: Swift.String, apiUrl: Swift.String, cdnUrl: Swift.String)
-  @objc deinit
-}
-public protocol OneTimeLinkServiceProtocol {
-  func getOnetimeAuthenticationId(completionHandler: @escaping (Swift.String) -> Swift.Void)
-}
-@_hasMissingDesignatedInitializers public class AuthenticationService : KindredSDK.AuthenticationServiceProtocol {
-  public func authenticateSDK()
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class ApiSettings : KindredSDK.ApiSettingsProtocol {
-  public func setup(configuration: KindredSDK.CoreConfiguration)
-  public func getClientId() throws -> Swift.String
-  public func getClientSecret() throws -> Swift.String
-  public func getSharedKey() throws -> Swift.String
-  public func getBaseUrl(path: Swift.String? = "") -> Swift.String
-  public func getImageUrl(path: Swift.String) -> Swift.String
-  @objc deinit
-}
 public class Debouncer {
   public init(delay: Foundation.TimeInterval)
   public func run(action: @escaping () -> Swift.Void)
@@ -291,7 +167,7 @@ public class Debouncer {
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DealButton : UIKit.UIButton {
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KindredSettings : KindredSDK.CoreSettings {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KindredSettings : KindredSDKCore.CoreSettings {
   public static let sharedSettings: KindredSDK.KindredSettings
   @objc deinit
 }
