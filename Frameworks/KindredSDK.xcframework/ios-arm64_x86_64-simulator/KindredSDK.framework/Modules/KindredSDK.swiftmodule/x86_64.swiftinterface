@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KindredSDK
 import AudioToolbox
 import CoreTelephony
@@ -74,6 +74,16 @@ public class AuthConfiguration {
   }
   public static func authModeLabelType(type: KindredSDK.AuthConfiguration.AuthMode) -> Swift.Bool?
   @objc deinit
+}
+public struct SDKConstants {
+  public struct SDKKeys {
+    public static let settingFont: Swift.String
+    public static let kkDidLoad: Swift.String
+    public static let kkTypingSounds: Swift.String
+    public static let kkCashbackDonation: Swift.String
+    public static let kkReferralLogo: Swift.String
+    public static let kkActiveDeal: Swift.String
+  }
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class KeyboardSDKViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public var dealsView: KindredSDK.DealsView!
@@ -167,8 +177,9 @@ public class Debouncer {
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DealButton : UIKit.UIButton {
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KindredSettings : KindredSDKCore.CoreSettings {
+@objc @_inheritsConvenienceInitializers public class KindredSettings : ObjectiveC.NSObject {
   public static let sharedSettings: KindredSDK.KindredSettings
+  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class SettingsConfiguration : ObjectiveC.NSObject {
