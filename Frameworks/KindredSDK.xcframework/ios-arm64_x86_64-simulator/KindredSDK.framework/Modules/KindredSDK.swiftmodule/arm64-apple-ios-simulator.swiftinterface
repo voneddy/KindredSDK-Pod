@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KindredSDK
 import AudioToolbox
 import CoreTelephony
@@ -55,7 +55,7 @@ public func kkprint(_ items: Any..., separator: Swift.String = " ", terminator: 
   @objc deinit
 }
 @objc public class CustomerKeyboardConfiguration : ObjectiveC.NSObject {
-  public init(display: KindredSDK.KeyboardDisplayConfiguration? = KeyboardDisplayConfiguration(), auth: KindredSDK.AuthConfiguration? = AuthConfiguration(), user: KindredSDK.UserConfiguration? = nil, charity: KindredSDKCore.CharityConfiguration? = nil)
+  public init(display: KindredSDK.KeyboardDisplayConfiguration? = KeyboardDisplayConfiguration(), auth: KindredSDK.AuthConfiguration? = AuthConfiguration(), user: KindredSDK.UserConfiguration? = nil, charity: KindredSDK.CharityConfiguration? = nil)
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class KMenuButton : UIKit.UIButton {
@@ -175,6 +175,16 @@ public class Debouncer {
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DealButton : UIKit.UIButton {
+  @objc deinit
+}
+@objc public class CharityConfiguration : ObjectiveC.NSObject {
+  public var charityId: Swift.String {
+    get
+  }
+  public var charityShare: Swift.Int {
+    get
+  }
+  public init(charityId: Swift.String, charityShare: Swift.Int)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class KindredSettings : ObjectiveC.NSObject {
