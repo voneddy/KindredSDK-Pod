@@ -187,6 +187,14 @@ public class Debouncer {
   public init(charityId: Swift.String, charityShare: Swift.Int)
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class KindredInterface : ObjectiveC.NSObject {
+  @objc public static func hasFullAccess(appGroupName: Swift.String?) -> Swift.String
+  @objc public static func isKeyboardExtensionEnabled() -> Swift.Bool
+  @objc public static func isKeyboardActive(textField: UIKit.UITextField?) -> Swift.String
+  @objc public static func openSettings(app: UIKit.UIApplication)
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers public class KindredSettings : ObjectiveC.NSObject {
   public static let sharedSettings: KindredSDK.KindredSettings
   @objc override dynamic public init()

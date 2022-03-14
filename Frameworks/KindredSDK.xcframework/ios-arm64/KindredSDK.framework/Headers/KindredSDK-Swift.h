@@ -283,6 +283,18 @@ SWIFT_CLASS("_TtC10KindredSDK25KeyboardSDKViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITextField;
+@class UIApplication;
+
+SWIFT_CLASS("_TtC10KindredSDK16KindredInterface")
+@interface KindredInterface : NSObject
++ (NSString * _Nonnull)hasFullAccessWithAppGroupName:(NSString * _Nullable)appGroupName SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)isKeyboardExtensionEnabled SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nonnull)isKeyboardActiveWithTextField:(UITextField * _Nullable)textField SWIFT_WARN_UNUSED_RESULT;
++ (void)openSettingsWithApp:(UIApplication * _Nonnull)app;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC10KindredSDK15KindredSettings")
 @interface KindredSettings : NSObject
