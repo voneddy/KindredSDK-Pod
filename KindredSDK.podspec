@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
    s.ios.deployment_target = '11.0'
    s.resources = ['Assets/**/*']
    s.resource_bundles = {
-     'KindredSDK' => ['Localizations/**/*']
+      'KindredSDK' => ['Localizations/**/*']
    }
    s.ios.vendored_frameworks = 'Frameworks/FleksyApps.xcframework', 'Frameworks/KindredSDK.xcframework', 'Frameworks/FleksyEngine.xcframework', 'Frameworks/FleksyKeyboardSDK.xcframework', 'Frameworks/ServiceFramework.xcframework', 'Frameworks/FleksyHelperSDK.xcframework'
    s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
