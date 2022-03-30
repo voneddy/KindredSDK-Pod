@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
    s.name = 'KindredSDK'
-   s.version = '1.5.2-beta.2'
+   s.version = '1.5.2-beta.3'
    s.license = 'KINDRED'
    s.summary = 'Kindred Keyboard SDK'
    s.homepage = 'https://www.kindredsdk.com'
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
    s.ios.deployment_target = '11.0'
    s.resources = ['Assets/**/*']
    s.resource_bundles = {
-       'KindredSDKBundle' => ['KindredSDK/Localizations/*']
+       'KindredSDKBundle' => ['Frameworks/KindredSDK.xcframework/**/*.lproj']
    }
    s.ios.vendored_frameworks = 'Frameworks/FleksyApps.xcframework', 'Frameworks/KindredSDK.xcframework', 'Frameworks/FleksyEngine.xcframework', 'Frameworks/FleksyKeyboardSDK.xcframework', 'Frameworks/ServiceFramework.xcframework', 'Frameworks/FleksyHelperSDK.xcframework'
    s.pod_target_xcconfig = {
