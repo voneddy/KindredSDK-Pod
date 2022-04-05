@@ -1,11 +1,3 @@
-/* 
-  Localizable.strings
-  KindredSDK
-
-  Created by Vrushali Wani on 06/01/2022.
-  Copyright © 2022 Kindred Soul Ltd. All rights reserved.
-*/
-
 "cash_back" = "cash back";
 "donations" = "spenden";
 "up_to" = "Bis zu";

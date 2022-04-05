@@ -76,7 +76,7 @@
 		<data>
 		g5IoY5kMSkMh6XW8ervMUhMtoK0=
 		</data>
-		<key>de.lproj/Localizable.strings</key>
+		<key>de.lproj/Kindred.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -85,7 +85,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>en.lproj/Localizable.strings</key>
+		<key>en.lproj/Kindred.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -216,7 +216,7 @@
 			DE6KekCxpg0KCiYhVzUED8M2xQTYz9kx9FdW8SY/0ek=
 			</data>
 		</dict>
-		<key>de.lproj/Localizable.strings</key>
+		<key>de.lproj/Kindred.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -225,7 +225,7 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>en.lproj/Localizable.strings</key>
+		<key>en.lproj/Kindred.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
