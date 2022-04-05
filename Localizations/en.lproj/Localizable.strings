@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  KindredSDK
+
+  Created by Vrushali Wani on 06/01/2022.
+  Copyright © 2022 Kindred Soul Ltd. All rights reserved.
+*/
+
+"cash_back" = "cash back";
+"donations" = "donations";
+"up_to" = "Up to";
+"copy" = "Copy";
+"copy_go" = "Copy & Go";
+"deal_activated" = "Deal activated";
+"click_here_to_view_details" = "Click here to view details";
+"click_here_to_view_your_coupon_codes" = "Click here to view your coupon codes";
+"get_my_cashback" = "Get my cashback";
+"get_my_donations" = "Get my donations";
