@@ -9,7 +9,12 @@
 #ifndef FleksyiOS_FleksyEngineUIUniqueIdentifiable_h
 #define FleksyiOS_FleksyEngineUIUniqueIdentifiable_h
 
-#import <FleksyEngine/FLEnums.h>
+#if __has_feature(modules)
+@import FleksyEngine;
+#else
+#import "FleksyEngine/FLEnums.h"
+#endif
+
 
 /**
  A layout object from the engine, which has a uniqueID.

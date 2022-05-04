@@ -10,7 +10,12 @@
 #define FleksyInputViewControllerDelegate_h
 
 #import <UIKit/UIKit.h>
+#if __has_feature(modules)
+@import FleksyEngine;
+#else
 #import "FleksyEngine/FLEnums.h"
+#endif
+
 #import "FleksyDefines.h"
 #import "FleksyViewControllerPresenter.h"
 #import "FleksyFontProvider.h"

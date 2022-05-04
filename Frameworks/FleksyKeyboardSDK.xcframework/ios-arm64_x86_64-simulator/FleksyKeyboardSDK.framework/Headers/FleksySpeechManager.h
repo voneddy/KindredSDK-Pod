@@ -10,7 +10,12 @@
 #define FleksySpeechManager_h
 
 #import "FleksyUtility.h"
+#if __has_feature(modules)
+@import FleksyEngine;
+#else
 #import "FleksyEngine/FLEnums.h"
+#endif
+
 #import <AVFoundation/AVFoundation.h>
 
 /**

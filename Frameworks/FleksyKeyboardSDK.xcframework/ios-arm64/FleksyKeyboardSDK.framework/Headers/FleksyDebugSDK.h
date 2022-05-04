@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <FleksyEngine/FLEnums.h>
+@import FleksyEngine;
 
 #import <UIKit/UIKit.h>
 

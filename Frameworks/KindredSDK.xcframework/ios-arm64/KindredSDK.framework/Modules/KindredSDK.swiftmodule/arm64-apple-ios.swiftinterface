@@ -4,7 +4,6 @@
 import AudioToolbox
 import CoreTelephony
 import FleksyApps
-import FleksyHelperSDK
 import FleksyKeyboardSDK
 import Foundation
 @_exported import KindredSDK
@@ -18,8 +17,6 @@ import _Concurrency
   @_Concurrency.MainActor(unsafe) public func updatePredictions(_ arrayPredictions: [Swift.String], _ arrayTypes: [Swift.UInt32])
   @objc deinit
 }
-public func kkprint(_ items: Swift.String..., filename: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line, separator: Swift.String = " ", terminator: Swift.String = "\n")
-public func kkprint(_ items: Any..., separator: Swift.String = " ", terminator: Swift.String = "\n")
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class NoFullAccessView : UIKit.UIView {
   @objc dynamic public init()
   @_Concurrency.MainActor(unsafe) public func initialise()
@@ -198,6 +195,8 @@ public class Debouncer {
 @objc @_inheritsConvenienceInitializers public class KindredSettings : ObjectiveC.NSObject {
   public static let sharedSettings: KindredSDK.KindredSettings
   @objc override dynamic public init()
+  public func setObj<Object>(_ object: Object, forKey: Swift.String) throws where Object : Swift.Encodable
+  public func getObject<Object>(forKey: Swift.String, castTo type: Object.Type) throws -> Object where Object : Swift.Decodable
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class SettingsConfiguration : ObjectiveC.NSObject {

@@ -87,21 +87,21 @@ public protocol InjectionKey {
   @objc deinit
 }
 @objc public protocol DealsServiceProtocol : ObjectiveC.NSObjectProtocol {
-  @objc func searchForDeals(searchTerm: Swift.String, completionHandler: @escaping ([KindredSDKCore.Deal]) -> Swift.Void)
-  @objc func getDealUniqueTrackingLink(for dealID: Swift.String, analytics: [Swift.String : Swift.AnyObject], completionHandler: @escaping (KindredSDKCore.DealClick) -> Swift.Void)
-  @objc func getDealUniqueTrackingLink(for dealID: Swift.String, completionHandler: @escaping (KindredSDKCore.DealClick) -> Swift.Void)
+  @objc func searchForDeals(searchTerm: Swift.String, completionHandler: @escaping ([KindredSDKCore.Deal]?, KindredSDKCore.KindredCoreError?) -> Swift.Void)
+  @objc func getDealUniqueTrackingLink(for dealID: Swift.String, analytics: [Swift.String : Swift.AnyObject], completionHandler: @escaping (KindredSDKCore.DealClick?, KindredSDKCore.KindredCoreError?) -> Swift.Void)
+  @objc func getDealUniqueTrackingLink(for dealID: Swift.String, completionHandler: @escaping (KindredSDKCore.DealClick?, KindredSDKCore.KindredCoreError?) -> Swift.Void)
 }
 @objc public protocol OneTimeLinkServiceProtocol {
-  @objc func getOnetimeAuthenticationId(completionHandler: @escaping (Swift.String) -> Swift.Void)
+  @objc func getOnetimeAuthenticationId(completionHandler: @escaping (Swift.String?, KindredSDKCore.KindredCoreError?) -> Swift.Void)
 }
 @objc public protocol UserServiceProtocol {
-  @objc func setDonationCharity(charityID: Swift.String, charityShare: Swift.Int, completionHandler: @escaping () -> Swift.Void)
+  @objc func setDonationCharity(charityID: Swift.String, charityShare: Swift.Int, completionHandler: @escaping (Swift.Bool, KindredSDKCore.KindredCoreError?) -> Swift.Void)
 }
 @objc public protocol AuthenticationServiceProtocol {
-  @objc func authenticateSDK()
+  @objc func authenticateSDK(completionHandler: @escaping (Swift.Bool, KindredSDKCore.KindredCoreError?) -> Swift.Void)
 }
 @objc public protocol AnalyticsServiceProtocol {
-  @objc func setLastActivityCheck()
+  @objc func setLastActivityCheck(completionHandler: @escaping (Swift.Bool, KindredSDKCore.KindredCoreError?) -> Swift.Void)
 }
 public struct CoreConstants {
   public struct CoreKeys {
@@ -182,12 +182,40 @@ public enum APIError : Swift.Error {
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class KindredCoreError : ObjectiveC.NSObject {
+  @objc public var errorType: KindredSDKCore.KindredCoreError.ErrorType {
+    get
+  }
+  @objc public enum ErrorType : Swift.Int {
+    case oneTimeIdError
+    case sdkAuthenticationError
+    case dealSearchError
+    case dealActivationError
+    case setAnalyticsCheckError
+    case setCharityError
+    case noUserId
+    case noError
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc convenience public init(errorType: KindredSDKCore.KindredCoreError.ErrorType)
+  @objc deinit
+}
+@objc extension KindredSDKCore.KindredCoreError : Foundation.LocalizedError {
+  @objc dynamic public var errorDescription: Swift.String? {
+    @objc get
+  }
+}
 @objc public protocol CoreSettingsProtocol : ObjectiveC.NSObjectProtocol {
   @objc func saveSetting(obj: Any, key: Swift.String)
   @objc func getSetting(key: Swift.String, defaultValue: Swift.String?) -> Swift.String
   @objc func getSettingBool(key: Swift.String, defaultValue: Swift.Bool) -> Swift.Bool
   @objc func getSettingInt(key: Swift.String, defaultValue: Swift.Int) -> Swift.Int
   @objc func getSettingArray(key: Swift.String) -> [Swift.String]
+  @objc func getSettingData(key: Swift.String) -> Foundation.Data?
   @objc func removeSettings(key: Swift.String)
   @objc func setUserId(userId: Swift.String)
   @objc func getUserId() throws -> Swift.String
@@ -214,3 +242,6 @@ public enum APIError : Swift.Error {
 }
 extension KindredSDKCore.APIError : Swift.Equatable {}
 extension KindredSDKCore.APIError : Swift.Hashable {}
+extension KindredSDKCore.KindredCoreError.ErrorType : Swift.Equatable {}
+extension KindredSDKCore.KindredCoreError.ErrorType : Swift.Hashable {}
+extension KindredSDKCore.KindredCoreError.ErrorType : Swift.RawRepresentable {}

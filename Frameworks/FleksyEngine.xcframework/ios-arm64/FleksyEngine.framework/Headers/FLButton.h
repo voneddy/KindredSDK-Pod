@@ -34,6 +34,7 @@ public:
 
   FLButton();
   FLButton(const FLUnicodeString &label_, FLButtonType buttonType_);
+  FLButton(const FLButton &src);
 
   FLButtonType buttonType;
   /**
@@ -58,6 +59,9 @@ public:
   bool isOnTempLayout = false;
   bool isActive = true;
   FLKeyboardID keyboardID; //ID of the keyboard this button is on
+
+  FLUnicodeString actionLabel;
+  FLUnicodeString actionValue;
 
   bool isLetterButton() const;
   bool isPunctuationButton() const;

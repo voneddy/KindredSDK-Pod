@@ -60,6 +60,10 @@ static const int FLButtonType_CandidateView2D= 27;
 static const int FLButtonType_FlickPunc      = 28; // Appears only on ja-JP Flick layout.
 static const int FLButtonType_DropDown       = 29;
 static const int FLButtonType_ReturnToEmoji  = 30;
+static const int FLButtonType_EmoLangSwitch  = 31;
+static const int FLButtonType_Phonepad_Symbols = 32;
+static const int FLButtonType_LongPress_Type = 33;
+static const int FLButtonType_CustomLabel = 34;
 
 typedef int FleksyLayout;
 static const int  FleksyLayout_INVISIBLE     = 2;
@@ -78,6 +82,7 @@ FL_EXTERN_C const char * const USE_LEGACY_LAYOUT_KEY;
 FL_EXTERN_C const char * const USE_STANDARD_LAYOUT_SYSTEM;
 FL_EXTERN_C const char * const DONT_USE_AUTOCORRECT_KEY;
 FL_EXTERN_C const char * const SWAP_ENTER_DELETE_KEY;
+FL_EXTERN_C const char * const NUMBERS_ROW_KEY;
 FL_EXTERN_C const char * const FLEKSY_LAYOUT_KEY;
 FL_EXTERN_C const char * const USE_CASE_SENSITIVE_LAYOUT_KEY;
 FL_EXTERN_C const char * const HAS_MICROPHONE_KEY;
@@ -92,6 +97,8 @@ FL_EXTERN_C const char * const CONFIG_NLP_SWIPE;
 FL_EXTERN_C const char * const DONT_CORRECT_DICT_WORDS_KEY;
 FL_EXTERN_C const char * const ALLOW_CORRECTION_AFTER_REPARSING_KEY;
 FL_EXTERN_C const char * const DOUBLE_SPACE_TAP_ADDS_PUNCT_KEY;
+FL_EXTERN_C const char * const ADDS_SPACE_AFTER_EMOJI_KEY;
+FL_EXTERN_C const char * const DOUBLE_SPACE_TAP_ADDS_PUNCT_EXCEPTIONS_KEY;
 FL_EXTERN_C const char * const TRIPLE_SPACE_ADDS_SPACE_KEY;
 FL_EXTERN_C const char * const ALLOW_BACKSPACE_TO_UNDO_AC;
 FL_EXTERN_C const char * const DONT_CORRECT_AFTER_PUNCT;
@@ -108,6 +115,7 @@ FL_EXTERN_C const char * const CONFIG_AC_MISSINGTAPS;
 FL_EXTERN_C const char * const CONFIG_AC_TRANSPOSITION;
 FL_EXTERN_C const char * const CONFIG_AC_INSERTION;
 
+FL_EXTERN_C const char * const CONFIG_AC_EXTERNAL;
 
 // Highlight keys
 FL_EXTERN_C const char * const KEY_TILE_DEF;
@@ -199,6 +207,8 @@ FL_EXTERN_C const char * const DATA_SCREEN_WIDTH_PX;
 FL_EXTERN_C const char * const DATA_SCREEN_WIDTH_PTS;
 FL_EXTERN_C const char * const DATA_CONFIG_COORDINATE;
 FL_EXTERN_C const char * const DATA_CONFIG_FORMAT;
+FL_EXTERN_C const char * const DATA_KEY_SWIPE_TIMESTAMPS;
+FL_EXTERN_C const char * const DATA_KEY_UNIP;
 
 typedef enum{
   FLDataCaptureCoordinateScreenPixel = 0,
@@ -247,7 +257,9 @@ typedef enum {
   FLKeyboardID_TWITTER_UPPER,       // 17
   FLKeyboardID_URL_LOWER,           // 18
   FLKeyboardID_URL_UPPER,           // 19
-  FLKeyboardID_NUMBER_OF_KEYBOARDS, // 20
+  FLKeyboardID_PHONE_PAD,           // 20
+  FLKeyboardID_PHONE_PAD_SYMBOLS,   // 21
+  FLKeyboardID_NUMBER_OF_KEYBOARDS, // 22
   FLKeyboardID_INVALID
 }FLKeyboardID;
 
@@ -354,7 +366,8 @@ typedef enum {
   FLTextFieldType_TWITTER_USER_AC_OFF,
   FLTextFieldType_NUMBERS,
   FLTextFieldType_TWITTER,
-  FLTextFieldType_WEBSEARCH
+  FLTextFieldType_WEBSEARCH,
+  FLTextFieldType_PHONE,
 }FLTextFieldType;
 
 typedef enum {

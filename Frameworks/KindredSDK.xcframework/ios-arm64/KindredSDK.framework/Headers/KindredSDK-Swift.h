@@ -377,7 +377,6 @@ SWIFT_CLASS("_TtC10KindredSDK17UserConfiguration")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
 #endif

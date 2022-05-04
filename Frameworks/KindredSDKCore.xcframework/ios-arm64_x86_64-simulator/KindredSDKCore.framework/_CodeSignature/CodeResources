@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/KindredSDKCore-Swift.h</key>
 		<data>
-		ar0Disc+eZHv5sC3YGDQnLv6dgs=
+		6g9hBhA54vUaZmZCgqDjbLFTTRY=
 		</data>
 		<key>Headers/KindredSDKCore.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		787cCEYiBbvn1LJvZgU7noj7+1E=
+		1shVQXwXxM6iyZC0HVeV2QN9WYE=
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		wouZ+4/wJoQpiiwZ8eEhe+W8m6o=
+		Y8Y2qXF40atj3MKS7oLkud4dZsA=
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		UvuCKs1zi5NwN0K3dVJGKrWVDcE=
+		MErP4CjKn4xb2ywMP0/2g1jJYVg=
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		wouZ+4/wJoQpiiwZ8eEhe+W8m6o=
+		Y8Y2qXF40atj3MKS7oLkud4dZsA=
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		UvuCKs1zi5NwN0K3dVJGKrWVDcE=
+		MErP4CjKn4xb2ywMP0/2g1jJYVg=
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		H6EgvpdYWtWfZRm3lw3rVhQO2Qk=
+		7vLh4gyMxyLhZdyiX7RknNW8CMU=
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		eNumXdn2d8DDOnwngLCRVtSVJkc=
+		TCaL5N6oHyue+xZQJPOLS3yg4hU=
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		H6EgvpdYWtWfZRm3lw3rVhQO2Qk=
+		7vLh4gyMxyLhZdyiX7RknNW8CMU=
 		</data>
 		<key>Modules/KindredSDKCore.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		eNumXdn2d8DDOnwngLCRVtSVJkc=
+		TCaL5N6oHyue+xZQJPOLS3yg4hU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,7 +75,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			K4fW9LQ/9PbzQHaI1LQuwuBT5vJTFKifGelGW/CxhuQ=
+			1pHfZhLDtBabwQZXqhGiiclH/oWFvYAgtYzPIzd8AnQ=
 			</data>
 		</dict>
 		<key>Headers/KindredSDKCore.h</key>
@@ -96,14 +96,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zUPbzX3uN1+TgJg0RiypQrcc/Tg3cGNd2z3iLTQwl1s=
+			1Ur/Y1U2i4oUMlhhgq7a/qf4SD68ADKe0OqKKiqW9Pk=
 			</data>
 		</dict>
 		<key>Modules/KindredSDKCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7pGR+Lo2vL8QrdfzuJXDi8lQErjcmoq+ZeRzk7qXP0Q=
+			PP+a2pW/IDBx9Z2MTOtv+6JV0jiQFFvhOKPsUJi35yo=
 			</data>
 		</dict>
 		<key>Modules/KindredSDKCore.swiftmodule/arm64.swiftdoc</key>
@@ -117,14 +117,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zUPbzX3uN1+TgJg0RiypQrcc/Tg3cGNd2z3iLTQwl1s=
+			1Ur/Y1U2i4oUMlhhgq7a/qf4SD68ADKe0OqKKiqW9Pk=
 			</data>
 		</dict>
 		<key>Modules/KindredSDKCore.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7pGR+Lo2vL8QrdfzuJXDi8lQErjcmoq+ZeRzk7qXP0Q=
+			PP+a2pW/IDBx9Z2MTOtv+6JV0jiQFFvhOKPsUJi35yo=
 			</data>
 		</dict>
 		<key>Modules/KindredSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -138,14 +138,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			L52ip1ozylvUIyk7kIu3+Je49hg7DG/BRZeiXDK97Gs=
+			Z9Vq3JVlX6N9icBvbai6+OIcy2bdUWCGzhNnnQy8mn0=
 			</data>
 		</dict>
 		<key>Modules/KindredSDKCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yLiXCWl91gHojGJoh8SzXq2Sjik35DRYHb7MQkxL30g=
+			MKljSpED1Z4EZR4ax3Vbfbm0/jMEWlcR6+KLxPRZMQo=
 			</data>
 		</dict>
 		<key>Modules/KindredSDKCore.swiftmodule/x86_64.swiftdoc</key>
@@ -159,14 +159,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			L52ip1ozylvUIyk7kIu3+Je49hg7DG/BRZeiXDK97Gs=
+			Z9Vq3JVlX6N9icBvbai6+OIcy2bdUWCGzhNnnQy8mn0=
 			</data>
 		</dict>
 		<key>Modules/KindredSDKCore.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yLiXCWl91gHojGJoh8SzXq2Sjik35DRYHb7MQkxL30g=
+			MKljSpED1Z4EZR4ax3Vbfbm0/jMEWlcR6+KLxPRZMQo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

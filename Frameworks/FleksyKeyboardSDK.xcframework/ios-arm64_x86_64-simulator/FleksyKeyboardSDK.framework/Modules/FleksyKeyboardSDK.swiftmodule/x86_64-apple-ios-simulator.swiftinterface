@@ -1,0 +1,49 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FleksyKeyboardSDK
+@_exported import FleksyKeyboardSDK
+import Foundation
+import Swift
+import _Concurrency
+import os.log
+import os
+public struct LanguageResource {
+  public let locale: Swift.String
+  public let layouts: [Swift.String]
+  public let defaultLayout: Swift.String
+  public let isAsset: Swift.Bool
+}
+public struct KeyboardLanguage {
+  public let locale: Swift.String
+  public let layout: Swift.String?
+  public init(locale: Swift.String, layout: Swift.String? = nil)
+}
+public struct LanguagesManifest : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct LanguageExternalResource : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum LanguageResourceType : Swift.String, Swift.Decodable {
+  case dictionary
+  case highlights
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct LanguagesHelper {
+  public static func storedLocales() -> Swift.Set<Swift.String>
+  public static func changeLanguage(_ keyboardLanguage: FleksyKeyboardSDK.KeyboardLanguage)
+  public static func updateLanguageLayout(_ keyboardLanguage: FleksyKeyboardSDK.KeyboardLanguage)
+  public static func getCurrentLayoutForLanguage(_ language: Swift.String) -> Swift.String?
+  public static func downloadLanguage(_ language: Swift.String, onProgress: ((_ bytesCurrent: Swift.Float, _ bytesTotal: Swift.Float) -> Swift.Void)? = nil, onComplete: ((Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)?)
+  public static func availableLanguages(_ onLanguagesLoaded: @escaping ([Swift.String : FleksyKeyboardSDK.LanguageResourceFiles]?) -> Swift.Void)
+  public static func availableResources(_ onResourcesLoaded: @escaping ([Swift.String : FleksyKeyboardSDK.LanguageResource]?) -> Swift.Void)
+  public static func languageResourceDetails(_ languageCode: Swift.String, _ callback: @escaping (FleksyKeyboardSDK.LanguageResource?) -> Swift.Void)
+  public static func deleteLanguage(_ language: Swift.String) -> Swift.String?
+  public static func addLanguage(_ keyboardLanguage: FleksyKeyboardSDK.KeyboardLanguage)
+}
+public struct LanguageResourceFiles {
+}

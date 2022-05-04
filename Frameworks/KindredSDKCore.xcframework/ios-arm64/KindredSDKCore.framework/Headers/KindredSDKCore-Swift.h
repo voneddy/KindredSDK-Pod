@@ -213,10 +213,12 @@ SWIFT_CLASS("_TtC14KindredSDKCore9Analytics")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSNumber;
+@class KindredCoreError;
 
 SWIFT_PROTOCOL("_TtP14KindredSDKCore24AnalyticsServiceProtocol_")
 @protocol AnalyticsServiceProtocol
-- (void)setLastActivityCheck;
+- (void)setLastActivityCheckWithCompletionHandler:(void (^ _Nonnull)(BOOL, KindredCoreError * _Nullable))completionHandler;
 @end
 
 @class CoreConfiguration;
@@ -235,7 +237,7 @@ SWIFT_PROTOCOL("_TtP14KindredSDKCore19ApiSettingsProtocol_")
 
 SWIFT_PROTOCOL("_TtP14KindredSDKCore29AuthenticationServiceProtocol_")
 @protocol AuthenticationServiceProtocol
-- (void)authenticateSDK;
+- (void)authenticateSDKWithCompletionHandler:(void (^ _Nonnull)(BOOL, KindredCoreError * _Nullable))completionHandler;
 @end
 
 
@@ -250,7 +252,7 @@ SWIFT_CLASS("_TtC14KindredSDKCore17CoreConfiguration")
 - (nonnull instancetype)init;
 @end
 
-@class NSNumber;
+@class NSData;
 
 SWIFT_PROTOCOL("_TtP14KindredSDKCore20CoreSettingsProtocol_")
 @protocol CoreSettingsProtocol <NSObject>
@@ -259,6 +261,7 @@ SWIFT_PROTOCOL("_TtP14KindredSDKCore20CoreSettingsProtocol_")
 - (BOOL)getSettingBoolWithKey:(NSString * _Nonnull)key defaultValue:(BOOL)defaultValue SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)getSettingIntWithKey:(NSString * _Nonnull)key defaultValue:(NSInteger)defaultValue SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<NSString *> * _Nonnull)getSettingArrayWithKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+- (NSData * _Nullable)getSettingDataWithKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
 - (void)removeSettingsWithKey:(NSString * _Nonnull)key;
 - (void)setUserIdWithUserId:(NSString * _Nonnull)userId;
 - (NSString * _Nullable)getUserIdAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
@@ -306,9 +309,9 @@ SWIFT_CLASS("_TtC14KindredSDKCore9DealClick")
 
 SWIFT_PROTOCOL("_TtP14KindredSDKCore20DealsServiceProtocol_")
 @protocol DealsServiceProtocol <NSObject>
-- (void)searchForDealsWithSearchTerm:(NSString * _Nonnull)searchTerm completionHandler:(void (^ _Nonnull)(NSArray<Deal *> * _Nonnull))completionHandler;
-- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nonnull))completionHandler;
-- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID completionHandler:(void (^ _Nonnull)(DealClick * _Nonnull))completionHandler;
+- (void)searchForDealsWithSearchTerm:(NSString * _Nonnull)searchTerm completionHandler:(void (^ _Nonnull)(NSArray<Deal *> * _Nullable, KindredCoreError * _Nullable))completionHandler;
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
 @end
 
 @class UIImage;
@@ -341,16 +344,42 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) id <ApiSetti
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+enum ErrorType : NSInteger;
+
+SWIFT_CLASS("_TtC14KindredSDKCore16KindredCoreError")
+@interface KindredCoreError : NSObject
+@property (nonatomic, readonly) enum ErrorType errorType;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (nonnull instancetype)initWithErrorType:(enum ErrorType)errorType;
+@end
+
+typedef SWIFT_ENUM(NSInteger, ErrorType, open) {
+  ErrorTypeOneTimeIdError = 0,
+  ErrorTypeSdkAuthenticationError = 1,
+  ErrorTypeDealSearchError = 2,
+  ErrorTypeDealActivationError = 3,
+  ErrorTypeSetAnalyticsCheckError = 4,
+  ErrorTypeSetCharityError = 5,
+  ErrorTypeNoUserId = 6,
+  ErrorTypeNoError = 7,
+};
+
+
+@interface KindredCoreError (SWIFT_EXTENSION(KindredSDKCore))
+@property (nonatomic, readonly, copy) NSString * _Nullable errorDescription;
+@end
+
 
 SWIFT_PROTOCOL("_TtP14KindredSDKCore26OneTimeLinkServiceProtocol_")
 @protocol OneTimeLinkServiceProtocol
-- (void)getOnetimeAuthenticationIdWithCompletionHandler:(void (^ _Nonnull)(NSString * _Nonnull))completionHandler;
+- (void)getOnetimeAuthenticationIdWithCompletionHandler:(void (^ _Nonnull)(NSString * _Nullable, KindredCoreError * _Nullable))completionHandler;
 @end
 
 
 SWIFT_PROTOCOL("_TtP14KindredSDKCore19UserServiceProtocol_")
 @protocol UserServiceProtocol
-- (void)setDonationCharityWithCharityID:(NSString * _Nonnull)charityID charityShare:(NSInteger)charityShare completionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)setDonationCharityWithCharityID:(NSString * _Nonnull)charityID charityShare:(NSInteger)charityShare completionHandler:(void (^ _Nonnull)(BOOL, KindredCoreError * _Nullable))completionHandler;
 @end
 
 #if __has_attribute(external_source_symbol)

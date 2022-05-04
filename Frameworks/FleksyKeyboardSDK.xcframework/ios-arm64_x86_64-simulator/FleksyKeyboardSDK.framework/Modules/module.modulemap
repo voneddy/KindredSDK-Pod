@@ -4,3 +4,8 @@ framework module FleksyKeyboardSDK {
   export *
   module * { export * }
 }
+
+module FleksyKeyboardSDK.Swift {
+    header "FleksyKeyboardSDK-Swift.h"
+    requires objc
+}

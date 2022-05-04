@@ -6,7 +6,11 @@
 //  Copyright © 2016 Thingthing, Ltd. All rights reserved.
 //
 
+#if __has_feature(modules)
+@import FleksyEngine;
+#else
 #import <FleksyEngine/FleksyEngine.h>
+#endif
 #import "FleksyEngineUIUniqueIdentifiable.h"
 #import <UIKit/UIKit.h>
 

@@ -12,7 +12,7 @@
 #import "FleksyCursorControl.h"
 #import "FleksySuggestionView.h"
 #import "FleksyViewControllerPresenter.h"
-#import <FleksyEngine/FLEnums.h>
+@import FleksyEngine;
 
 
 NS_ASSUME_NONNULL_BEGIN

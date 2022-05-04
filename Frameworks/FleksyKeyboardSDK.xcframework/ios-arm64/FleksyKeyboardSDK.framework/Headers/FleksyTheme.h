@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "FleksyUtility+Sounds.h"
+#if __has_feature(modules)
+@import FleksyEngine;
+#else
 #import "FleksyEngine/FLEnums.h"
+#endif
+
 
 #define THEME_CHANGE_DURATION 0.5
 

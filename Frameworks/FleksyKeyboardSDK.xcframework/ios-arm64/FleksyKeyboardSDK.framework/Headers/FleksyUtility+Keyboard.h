@@ -26,6 +26,12 @@
  */
 + (CGFloat)getKeyboardHeightForWidth:(CGFloat)width
                      traitCollection:(UITraitCollection *)traitCollection;
+
+/// Returns the bottom safe area inset for the passed screen size and trait collection.
+/// @param size The size of the screen.
+/// @param traitCollection The current trait collection.
++ (CGFloat)getBottomKeyboardOffsetForScreenSize:(CGSize)size
+                               traitCollection:(UITraitCollection *)traitCollection;
 + (CGRect)getDefaultFleksyKeyboardSizeWithTraitCollection:(UITraitCollection *)traitCollection;
 + (CGFloat)getDefaultFleksyHeightForWidth:(CGFloat)width
                           traitCollection:(UITraitCollection *)traitCollection;
