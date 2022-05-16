@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
    s.name = 'KindredSDK'
-   s.version = '1.6.0'
+   s.version = '1.7.1'
    s.license = 'KINDRED'
    s.summary = 'Kindred Keyboard SDK'
    s.homepage = 'https://www.kindredsdk.com'

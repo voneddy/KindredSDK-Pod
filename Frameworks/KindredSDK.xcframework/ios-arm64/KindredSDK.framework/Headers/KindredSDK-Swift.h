@@ -210,6 +210,17 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSCoder;
+
+SWIFT_CLASS("_TtC10KindredSDK14ActiveDealView")
+@interface ActiveDealView : UIView
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)initialise;
+- (void)didSelectDealWithSender:(id _Nullable)sender;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 
 
 SWIFT_CLASS("_TtC10KindredSDK20CharityConfiguration")
@@ -221,7 +232,6 @@ SWIFT_CLASS("_TtC10KindredSDK20CharityConfiguration")
 @class NSNumber;
 @class UIImage;
 @class CIColor;
-@class NSCoder;
 @class UITraitCollection;
 
 SWIFT_CLASS("_TtC10KindredSDK7Colours")
@@ -240,6 +250,26 @@ SWIFT_CLASS("_TtC10KindredSDK7Colours")
 
 
 
+SWIFT_CLASS("_TtC10KindredSDK10CouponCard")
+@interface CouponCard : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
+- (void)didSelectCopyAndGoWithSender:(id _Nullable)sender;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+@class UITapGestureRecognizer;
+@class UIButton;
+
+SWIFT_CLASS("_TtC10KindredSDK10CouponView")
+@interface CouponView : UIView
+- (void)setActiveDeal;
+- (void)goToSite:(UITapGestureRecognizer * _Nullable)sender;
+- (void)closePressedWithButton:(UIButton * _Nonnull)button;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC10KindredSDK29CustomerKeyboardConfiguration")
 @interface CustomerKeyboardConfiguration : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -249,21 +279,24 @@ SWIFT_CLASS("_TtC10KindredSDK29CustomerKeyboardConfiguration")
 
 SWIFT_CLASS("_TtC10KindredSDK10DealButton")
 @interface DealButton : UIButton
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)didSelectCouponButtonWithSender:(id _Nullable)sender;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
 SWIFT_CLASS("_TtC10KindredSDK9DealsView")
 @interface DealsView : UIScrollView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)withdrawalClickedWithSender:(UIButton * _Nonnull)sender;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
+- (void)handleDealClick:(DealButton * _Nonnull)sender;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
 SWIFT_CLASS("_TtC10KindredSDK11KMenuButton")
 @interface KMenuButton : UIButton
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
@@ -304,14 +337,14 @@ SWIFT_CLASS("_TtC10KindredSDK15KindredSettings")
 @protocol FleksyThemeableUI;
 @class UITouch;
 @class UIEvent;
+@class NSNotification;
 @protocol UITextInput;
 @protocol UIViewControllerTransitionCoordinator;
 @class KeyboardProperties;
 
 SWIFT_CLASS("_TtC10KindredSDK21KindredViewController")
 @interface KindredViewController : UIInputViewController <FKInterfaceInputViewControllerDelegate, UIGestureRecognizerDelegate>
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (nonnull instancetype)init;
 - (void)addKeyboardViewController:(UIViewController * _Nonnull)currentKeyboardVC;
 - (void)addDisplayedViewController:(UIViewController <FleksyThemeableUI> * _Nonnull)displayVC;
 - (void)addExtensionsViewController:(UIViewController * _Nonnull)extensionsVC;
@@ -325,6 +358,11 @@ SWIFT_CLASS("_TtC10KindredSDK21KindredViewController")
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
+- (void)showCouponDetailsView:(NSNotification * _Nonnull)notification;
+- (void)removeCouponView;
+- (void)removeViewWithView:(UIView * _Nonnull)view;
+- (void)removeViewsForNoText;
+- (void)updateDealsForTextChange;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)textWillChange:(id <UITextInput> _Nullable)textInput;
 - (void)textDidChange:(id <UITextInput> _Nullable)textInput;
@@ -340,23 +378,23 @@ SWIFT_CLASS("_TtC10KindredSDK21KindredViewController")
 SWIFT_CLASS("_TtC10KindredSDK16NoFullAccessView")
 @interface NoFullAccessView : UIView
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
 SWIFT_CLASS("_TtC10KindredSDK16PredictionButton")
 @interface PredictionButton : UIButton
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
 SWIFT_CLASS("_TtC10KindredSDK15PredictionsView")
 @interface PredictionsView : UIView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)handlePredictionsWithSender:(PredictionButton * _Nonnull)sender;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 

@@ -22,7 +22,11 @@ inhibit_all_warnings!
 
 platform :ios, '11.0'
 
-target '**Sample**' do
+target '**Sample_app**' do
+    pod 'KindredSDK'
+end
+
+target '**Sample_keyboard_target**' do
     pod 'KindredSDK'
 end
 ```

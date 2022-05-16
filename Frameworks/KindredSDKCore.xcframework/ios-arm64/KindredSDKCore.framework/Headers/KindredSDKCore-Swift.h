@@ -241,6 +241,12 @@ SWIFT_PROTOCOL("_TtP14KindredSDKCore29AuthenticationServiceProtocol_")
 @end
 
 
+SWIFT_CLASS("_TtC14KindredSDKCore7Charity")
+@interface Charity : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC14KindredSDKCore15CoreAppSettings")
 @interface CoreAppSettings : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -281,6 +287,35 @@ SWIFT_PROTOCOL("_TtP14KindredSDKCore20CoreSettingsProtocol_")
 @end
 
 
+SWIFT_CLASS("_TtC14KindredSDKCore12CoreSettings")
+@interface CoreSettings : NSObject <CoreSettingsProtocol>
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)saveSettingWithObj:(id _Nonnull)obj key:(NSString * _Nonnull)key;
+- (NSString * _Nonnull)getSettingWithKey:(NSString * _Nonnull)key defaultValue:(NSString * _Nullable)defaultValue SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)getSettingBoolWithKey:(NSString * _Nonnull)key defaultValue:(BOOL)defaultValue SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)getSettingIntWithKey:(NSString * _Nonnull)key defaultValue:(NSInteger)defaultValue SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<NSString *> * _Nonnull)getSettingArrayWithKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+- (NSData * _Nullable)getSettingDataWithKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+- (void)removeSettingsWithKey:(NSString * _Nonnull)key;
+- (void)setUserIdWithUserId:(NSString * _Nonnull)userId;
+- (NSString * _Nullable)getUserIdAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)getUserCurrency SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getUserCurrencyFromLocale SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)getUserCountry SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getUserCountryByTelephony SWIFT_WARN_UNUSED_RESULT;
+- (void)setStandardUserCurrency;
+- (void)setStandardUserCountry;
+- (NSString * _Nonnull)dealsSearchRequest SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)activateDealRequest SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isSDKMode SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isCouponsOnly SWIFT_WARN_UNUSED_RESULT;
+- (void)setCouponsOnlyWithValue:(BOOL)value;
+- (NSString * _Nullable)getDeviceId SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isValueSetWithKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
 SWIFT_CLASS("_TtC14KindredSDKCore11CouponCodes")
 @interface CouponCodes : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull code;
@@ -313,6 +348,22 @@ SWIFT_PROTOCOL("_TtP14KindredSDKCore20DealsServiceProtocol_")
 - (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
 - (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
 @end
+
+
+SWIFT_CLASS("_TtC14KindredSDKCore12DealsService")
+@interface DealsService : NSObject <DealsServiceProtocol>
+- (void)searchForDealsWithSearchTerm:(NSString * _Nonnull)searchTerm completionHandler:(void (^ _Nonnull)(NSArray<Deal *> * _Nullable, KindredCoreError * _Nullable))completionHandler;
+/// Activate deal and return deal unique tracking Url
+/// \param params <code>Request<DealClickResponse></code>
+///
+///
+/// returns:
+/// <code>DealClick</code>, ’<code>KindredCoreError?</code>
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 @class UIImage;
 
