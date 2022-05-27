@@ -318,8 +318,9 @@ SWIFT_CLASS("_TtC14KindredSDKCore12CoreSettings")
 
 
 
-SWIFT_CLASS("_TtC14KindredSDKCore11CouponCodes")
-@interface CouponCodes : NSObject
+SWIFT_CLASS("_TtC14KindredSDKCore14CouponAndOffer")
+@interface CouponAndOffer : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable trackingLink;
 @property (nonatomic, readonly, copy) NSString * _Nonnull code;
 @property (nonatomic, readonly, copy) NSString * _Nonnull summary;
 @end
@@ -329,11 +330,12 @@ SWIFT_CLASS("_TtC14KindredSDKCore4Deal")
 @interface Deal : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull dealId;
 @property (nonatomic, readonly, copy) NSString * _Nonnull storeName;
-@property (nonatomic, readonly) float cashback;
+@property (nonatomic, readonly) double cashback;
 @property (nonatomic, readonly, copy) NSString * _Nonnull cashbackType;
 @property (nonatomic, readonly, copy) NSString * _Nullable currency;
 @property (nonatomic, readonly, copy) NSString * _Nullable logo;
-@property (nonatomic, readonly, copy) NSArray<CouponCodes *> * _Nullable codes;
+- (NSArray<CouponAndOffer *> * _Nonnull)coupons SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<CouponAndOffer *> * _Nonnull)couponsAndOffers SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -347,22 +349,22 @@ SWIFT_CLASS("_TtC14KindredSDKCore9DealClick")
 SWIFT_PROTOCOL("_TtP14KindredSDKCore20DealsServiceProtocol_")
 @protocol DealsServiceProtocol <NSObject>
 - (void)searchForDealsWithSearchTerm:(NSString * _Nonnull)searchTerm completionHandler:(void (^ _Nonnull)(NSArray<Deal *> * _Nullable, KindredCoreError * _Nullable))completionHandler;
-- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
-- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID couponAndOffer:(CouponAndOffer * _Nullable)couponAndOffer analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID couponAndOffer:(CouponAndOffer * _Nullable)couponAndOffer completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
 @end
 
 
 SWIFT_CLASS("_TtC14KindredSDKCore12DealsService")
 @interface DealsService : NSObject <DealsServiceProtocol>
 - (void)searchForDealsWithSearchTerm:(NSString * _Nonnull)searchTerm completionHandler:(void (^ _Nonnull)(NSArray<Deal *> * _Nullable, KindredCoreError * _Nullable))completionHandler;
-/// Activate deal and return deal unique tracking Url
+/// Activate deal and return deal unique tracking Url api call
 /// \param params <code>Request<DealClickResponse></code>
 ///
 ///
 /// returns:
-/// <code>DealClick</code>, ’<code>KindredCoreError?</code>
-- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
-- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
+/// <code>DealClick</code>, <code>Error</code>
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID couponAndOffer:(CouponAndOffer * _Nullable)couponAndOffer analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID couponAndOffer:(CouponAndOffer * _Nullable)couponAndOffer completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -760,8 +762,9 @@ SWIFT_CLASS("_TtC14KindredSDKCore12CoreSettings")
 
 
 
-SWIFT_CLASS("_TtC14KindredSDKCore11CouponCodes")
-@interface CouponCodes : NSObject
+SWIFT_CLASS("_TtC14KindredSDKCore14CouponAndOffer")
+@interface CouponAndOffer : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable trackingLink;
 @property (nonatomic, readonly, copy) NSString * _Nonnull code;
 @property (nonatomic, readonly, copy) NSString * _Nonnull summary;
 @end
@@ -771,11 +774,12 @@ SWIFT_CLASS("_TtC14KindredSDKCore4Deal")
 @interface Deal : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull dealId;
 @property (nonatomic, readonly, copy) NSString * _Nonnull storeName;
-@property (nonatomic, readonly) float cashback;
+@property (nonatomic, readonly) double cashback;
 @property (nonatomic, readonly, copy) NSString * _Nonnull cashbackType;
 @property (nonatomic, readonly, copy) NSString * _Nullable currency;
 @property (nonatomic, readonly, copy) NSString * _Nullable logo;
-@property (nonatomic, readonly, copy) NSArray<CouponCodes *> * _Nullable codes;
+- (NSArray<CouponAndOffer *> * _Nonnull)coupons SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<CouponAndOffer *> * _Nonnull)couponsAndOffers SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -789,22 +793,22 @@ SWIFT_CLASS("_TtC14KindredSDKCore9DealClick")
 SWIFT_PROTOCOL("_TtP14KindredSDKCore20DealsServiceProtocol_")
 @protocol DealsServiceProtocol <NSObject>
 - (void)searchForDealsWithSearchTerm:(NSString * _Nonnull)searchTerm completionHandler:(void (^ _Nonnull)(NSArray<Deal *> * _Nullable, KindredCoreError * _Nullable))completionHandler;
-- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
-- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID couponAndOffer:(CouponAndOffer * _Nullable)couponAndOffer analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID couponAndOffer:(CouponAndOffer * _Nullable)couponAndOffer completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
 @end
 
 
 SWIFT_CLASS("_TtC14KindredSDKCore12DealsService")
 @interface DealsService : NSObject <DealsServiceProtocol>
 - (void)searchForDealsWithSearchTerm:(NSString * _Nonnull)searchTerm completionHandler:(void (^ _Nonnull)(NSArray<Deal *> * _Nullable, KindredCoreError * _Nullable))completionHandler;
-/// Activate deal and return deal unique tracking Url
+/// Activate deal and return deal unique tracking Url api call
 /// \param params <code>Request<DealClickResponse></code>
 ///
 ///
 /// returns:
-/// <code>DealClick</code>, ’<code>KindredCoreError?</code>
-- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
-- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
+/// <code>DealClick</code>, <code>Error</code>
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID couponAndOffer:(CouponAndOffer * _Nullable)couponAndOffer analytics:(NSDictionary<NSString *, id> * _Nonnull)analytics completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
+- (void)getDealUniqueTrackingLinkFor:(NSString * _Nonnull)dealID couponAndOffer:(CouponAndOffer * _Nullable)couponAndOffer completionHandler:(void (^ _Nonnull)(DealClick * _Nullable, KindredCoreError * _Nullable))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

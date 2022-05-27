@@ -253,17 +253,14 @@ SWIFT_CLASS("_TtC10KindredSDK7Colours")
 SWIFT_CLASS("_TtC10KindredSDK10CouponCard")
 @interface CouponCard : UIView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
-- (void)didSelectCopyAndGoWithSender:(id _Nullable)sender;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
-@class UITapGestureRecognizer;
 @class UIButton;
 
 SWIFT_CLASS("_TtC10KindredSDK10CouponView")
 @interface CouponView : UIView
 - (void)setActiveDeal;
-- (void)goToSite:(UITapGestureRecognizer * _Nullable)sender;
 - (void)closePressedWithButton:(UIButton * _Nonnull)button;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -308,14 +305,6 @@ SWIFT_CLASS("_TtC10KindredSDK28KeyboardDisplayConfiguration")
 @end
 
 @class NSString;
-@class NSBundle;
-
-SWIFT_CLASS("_TtC10KindredSDK25KeyboardSDKViewController")
-@interface KeyboardSDKViewController : UIViewController
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class UITextField;
 @class UIApplication;
 
@@ -334,6 +323,7 @@ SWIFT_CLASS("_TtC10KindredSDK15KindredSettings")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIViewController;
 @protocol FleksyThemeableUI;
 @class UITouch;
 @class UIEvent;
@@ -341,6 +331,7 @@ SWIFT_CLASS("_TtC10KindredSDK15KindredSettings")
 @protocol UITextInput;
 @protocol UIViewControllerTransitionCoordinator;
 @class KeyboardProperties;
+@class NSBundle;
 
 SWIFT_CLASS("_TtC10KindredSDK21KindredViewController")
 @interface KindredViewController : UIInputViewController <FKInterfaceInputViewControllerDelegate, UIGestureRecognizerDelegate>
@@ -403,6 +394,7 @@ SWIFT_CLASS("_TtC10KindredSDK21SettingsConfiguration")
 @interface SettingsConfiguration : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 

@@ -88,8 +88,8 @@ public protocol InjectionKey {
 }
 @objc public protocol DealsServiceProtocol : ObjectiveC.NSObjectProtocol {
   @objc func searchForDeals(searchTerm: Swift.String, completionHandler: @escaping ([KindredSDKCore.Deal]?, KindredSDKCore.KindredCoreError?) -> Swift.Void)
-  @objc func getDealUniqueTrackingLink(for dealID: Swift.String, analytics: [Swift.String : Swift.AnyObject], completionHandler: @escaping (KindredSDKCore.DealClick?, KindredSDKCore.KindredCoreError?) -> Swift.Void)
-  @objc func getDealUniqueTrackingLink(for dealID: Swift.String, completionHandler: @escaping (KindredSDKCore.DealClick?, KindredSDKCore.KindredCoreError?) -> Swift.Void)
+  @objc func getDealUniqueTrackingLink(for dealID: Swift.String, couponAndOffer: KindredSDKCore.CouponAndOffer?, analytics: [Swift.String : Swift.AnyObject], completionHandler: @escaping (KindredSDKCore.DealClick?, KindredSDKCore.KindredCoreError?) -> Swift.Void)
+  @objc func getDealUniqueTrackingLink(for dealID: Swift.String, couponAndOffer: KindredSDKCore.CouponAndOffer?, completionHandler: @escaping (KindredSDKCore.DealClick?, KindredSDKCore.KindredCoreError?) -> Swift.Void)
 }
 @objc public protocol OneTimeLinkServiceProtocol {
   @objc func getOnetimeAuthenticationId(completionHandler: @escaping (Swift.String?, KindredSDKCore.KindredCoreError?) -> Swift.Void)
@@ -152,7 +152,7 @@ public enum APIError : Swift.Error {
   @objc public var storeName: Swift.String {
     get
   }
-  @objc public var cashback: Swift.Float {
+  @objc public var cashback: Swift.Double {
     get
   }
   @objc public var cashbackType: Swift.String {
@@ -164,14 +164,16 @@ public enum APIError : Swift.Error {
   @objc public var logo: Swift.String? {
     get
   }
-  @objc public var codes: [KindredSDKCore.CouponCodes]? {
-    get
-  }
+  @objc public func coupons() -> [KindredSDKCore.CouponAndOffer]
+  @objc public func couponsAndOffers() -> [KindredSDKCore.CouponAndOffer]
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
-@objc public class CouponCodes : ObjectiveC.NSObject, Swift.Codable {
+@objc public class CouponAndOffer : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var trackingLink: Swift.String? {
+    get
+  }
   @objc public var code: Swift.String {
     get
   }

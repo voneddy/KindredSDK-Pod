@@ -81,25 +81,6 @@ public struct SDKConstants {
     public static let kkActiveDeal: Swift.String
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class KeyboardSDKViewController : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) public var dealsView: KindredSDK.DealsView!
-  @_Concurrency.MainActor(unsafe) public var dealButton: KindredSDK.DealButton
-  @_Concurrency.MainActor(unsafe) public var kMenuButton: KindredSDK.KMenuButton!
-  @_Concurrency.MainActor(unsafe) public var noFullAccessView: KindredSDK.NoFullAccessView!
-  @_Concurrency.MainActor(unsafe) public var predictionButton: KindredSDK.PredictionButton!
-  @_Concurrency.MainActor(unsafe) public var predictionsView: KindredSDK.PredictionsView!
-  @_Concurrency.MainActor(unsafe) public func getDealsView() -> KindredSDK.DealsView
-  @_Concurrency.MainActor(unsafe) public func getDealButton() -> KindredSDK.DealButton
-  @_Concurrency.MainActor(unsafe) public func getKMenuButton() -> KindredSDK.KMenuButton
-  @_Concurrency.MainActor(unsafe) public func getNoFullAccessView() -> KindredSDK.NoFullAccessView
-  @_Concurrency.MainActor(unsafe) public func getPredictionButton() -> KindredSDK.PredictionButton
-  @_Concurrency.MainActor(unsafe) public func getPredictionsView() -> KindredSDK.PredictionsView
-  @_Concurrency.MainActor(unsafe) public func initFleksyInterfaceForDealsView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController) -> KindredSDK.DealsView
-  @_Concurrency.MainActor(unsafe) public func initFleksyInterfaceForPredictionView(fleksyInterface: FleksyKeyboardSDK.FKInterfaceInputViewController, textProxy: UIKit.UITextDocumentProxy) -> KindredSDK.PredictionsView
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class KindredViewController : UIKit.UIInputViewController, FleksyKeyboardSDK.FKInterfaceInputViewControllerDelegate, UIKit.UIGestureRecognizerDelegate {
   @_Concurrency.MainActor(unsafe) @objc open func addKeyboardViewController(_ currentKeyboardVC: UIKit.UIViewController)
   @_Concurrency.MainActor(unsafe) @objc open func addDisplayedViewController(_ displayVC: UIKit.UIViewController & FleksyKeyboardSDK.FleksyThemeableUI)
@@ -149,6 +130,9 @@ public struct SDKConstants {
   public static let justBlack: UIKit.UIColor
   public static let transparent: UIKit.UIColor
   public static let blueColour: UIKit.UIColor
+  public static let claimOfferBackgroundColour: UIKit.UIColor
+  public static let numberOfDealsTextColour: UIKit.UIColor
+  public static let summarytextColour: UIKit.UIColor
   @objc override dynamic public init(white: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
   @objc override dynamic public init(hue: CoreGraphics.CGFloat, saturation: CoreGraphics.CGFloat, brightness: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
   @objc override dynamic public init(red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat)
