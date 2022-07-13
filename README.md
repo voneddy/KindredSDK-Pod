@@ -1,39 +1,46 @@
-# KindredSDK Setup
+# KindredSDK pod Setup
 
+## Step 1: Install CocoaPods**
 
-**If your poroject does't have pods then we need to setup pods first by using below steps:-**
+To install CocoaPods(if not already installed), open Terminal app and run the following command:
 
-1. Open Terminal and execute: 
-2. ```bash $ sudo gem install cocoapods```
-3. Navigate to your Project folder (I assume in your case it's cd /Users/myName/Developer/SimpleWeather/SimpleWeather.xcodeproj).
-4. bash Setup Cocoapod pod setup
-5. Create the Podfile touch Podfile
-6. Open the Podfile open -e Podfile and insert your code for Podfile
-7. Finally install the Podfile pod install
+ ```$ sudo gem install cocoapods```
+ 
+## Step 2: Create a Podfile**
 
+In Terminal app, navigate to your Project folder and create a Podfile using
 
-Once pods are setup you can past the followign code into your Podfile
+ ```$ touch Podfile```
+ 
+Open the Podfile 
 
-```bash
-source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/kindred-app/Specs.git'
-use_frameworks!
-inhibit_all_warnings!
+```open -e Podfile``` 
 
-platform :ios, '11.0'
-
-target '**Sample_app**' do
-    pod 'KindredSDK'
-end
-
-target '**Sample_keyboard_target**' do
-    pod 'KindredSDK'
-end
+It will open the Podfile in TextEdit app. Copy and paste the following lines
 ```
+source 'https://github.com/kindred-app/Specs.git'
 
+target 'your_app_name' do
+    pod 'KindredSDK', '1.7.1'
+end
 
+target 'your_keyboard_target' do
+    pod 'KindredSDK', '1.7.1'
+end
+``` 
 
+If you want to install only the Core SDK, then copy the following lines
+```
+source 'https://github.com/kindred-app/Specs.git'
+
+target 'your_app_name' do
+    pod 'KindredSDK/Core', '1.7.1'
+end
+``` 
+
+Finally install the pod
+
+```pod install```
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
-Kindred Ltd - All rights reserved.
+All rights reserved to Kindred.
