@@ -1,12 +1,12 @@
 # KindredSDK pod Setup
 
-## Step 1: Install CocoaPods**
+## Step 1: Install CocoaPods
 
 To install CocoaPods(if not already installed), open Terminal app and run the following command:
 
  ```$ sudo gem install cocoapods```
  
-## Step 2: Create a Podfile**
+## Step 2: Create a Podfile
 
 In Terminal app, navigate to your Project folder and create a Podfile using
 
