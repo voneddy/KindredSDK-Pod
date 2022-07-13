@@ -6,7 +6,7 @@ To install CocoaPods(if not already installed), open Terminal app and run the fo
 
  ```$ sudo gem install cocoapods```
  
-## Step 2: Create a Podfile
+## Step 2: Create a Podfile
 
 In Terminal app, navigate to your Project folder and create a Podfile using
 
