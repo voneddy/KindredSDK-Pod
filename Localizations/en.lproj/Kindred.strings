@@ -4,7 +4,8 @@
 "copy" = "Copy";
 "copy_go" = "Copy & Go";
 "claim_offer" = "Claim offer";
-"offers_available_for %@" = "offers available for %@!";
+"offers_available_for %@.one" = "offer available for %@!";
+"offers_available_for %@.other" = "offers available for %@!";
 "deal_activated" = "Deal activated";
 "click_here_to_view_details" = "Click here to view details";
 "click_here_to_view_your_coupon_codes" = "Click here to view your coupon codes";

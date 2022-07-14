@@ -4,7 +4,8 @@
 "copy" = "Kopieren";
 "copy_go" = "Kopieren und weiter";
 "claim_offer" = "Zum Gutschein";
-"offers_available_for %@" = "aktuelle %@ Gutscheine verfügbar!";
+"offers_available_for %@.one" = "aktueller %@ Gutschein verfügbar!";
+"offers_available_for %@.other" = "aktuelle %@ Gutscheine verfügbar!";
 "deal_activated" = "Deal aktiviert";
 "click_here_to_view_details" = "Klicken Sie hier, um Details anzuzeigen";
 "click_here_to_view_your_coupon_codes" = "Klicken Sie hier, um Ihre Gutscheincodes anzuzeigen";
